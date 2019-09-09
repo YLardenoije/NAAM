@@ -51,14 +51,17 @@ public class PlayerController : MonoBehaviour
            
             float distance = (float)Math.Sqrt(Math.Pow(EndPoint.x - tf.position.x, 2.0) + Math.Pow(EndPoint.y - tf.position.y, 2.0));
 
-            //int layerMask = 1 << LayerMask.NameToLayer("Ground");
-            RaycastHit2D hit = Physics2D.Raycast(tf.position, grapplepoint, distance);
+            int layerMask = 0;
+            layerMask = 1 << LayerMask.NameToLayer("Ground");
+            RaycastHit2D hit = Physics2D.Raycast(tf.position, EndPoint - new Vector2(tf.position.x,tf.position.y), distance, layerMask);
             if (hit.collider != null)
             {
+                Debug.Log(hit.collider);
                 grapplepoint = hit.point;
                 Vector2 pos2D = new Vector2(tf.position.x, tf.position.y);
                 rb.AddForce((hit.point-pos2D)*GrapplePower);
-                Debug.DrawLine(tf.position, new Vector3(grapplepoint.x, grapplepoint.y,0),Color.red,4, false);
+                Debug.DrawLine(tf.position, new Vector3(EndPoint.x, EndPoint.y,0),Color.red,4, false);
+                Debug.DrawLine(tf.position, new Vector3(hit.point.x,hit.point.y, 0), Color.green, 4, false);
                 Debug.Log("hit a wall at " + hit.point);
                 Grappling = true;
 
@@ -73,7 +76,7 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.touchCount <= 0 || Input.GetTouch(0).phase != TouchPhase.Began)
         {
-            rb.AddForce( (grapplepoint-new Vector2(tf.position.x,tf.position.y))* GrapplePower, ForceMode2D.Impulse);
+           // rb.AddForce( (grapplepoint-new Vector2(tf.position.x,tf.position.y))* GrapplePower, ForceMode2D.Impulse);
         }
         else
         {
