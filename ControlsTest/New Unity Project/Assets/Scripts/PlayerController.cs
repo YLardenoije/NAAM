@@ -9,13 +9,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     private Transform tf;
     private Rigidbody2D rb;
-    public float GrapplePower = 10;
     public float MovementSpeed = 10;
     private bool Grappling = false;
     private Vector2 grapplepoint;
 
     [SerializeField] private Player player;
-    [SerializeField] private Grapple grapple;
+    [SerializeField] private Grapple GrapplePrefab, CurrentGrapple;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,15 +31,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         rb.AddForce(new Vector2(Input.acceleration.x*MovementSpeed, 0)); //tilting should be working like this? // i guess it does C:
-        
-        if(Grappling)
-        {
-            duringGrapple();
-        }
-        else
-        {
-            grappleStart();
-        }
+
+        grappleStart();
+
     
 
     }
@@ -51,7 +44,21 @@ public class PlayerController : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
             Vector2 EndPoint = mainCamera.ScreenToWorldPoint(touch.position);
-           
+            if (CurrentGrapple == null)
+            {
+                CurrentGrapple = Instantiate(GrapplePrefab, transform.position, transform.rotation);
+                CurrentGrapple.Target = touch.position;
+                CurrentGrapple.Source = player;
+            }
+            else
+            {
+                Destroy(CurrentGrapple.gameObject);
+
+                CurrentGrapple = null;
+            }
+
+            //This code should be useless now. If not, i fucked up. 
+            /*
             float distance = (float)Math.Sqrt(Math.Pow(EndPoint.x - tf.position.x, 2.0) + Math.Pow(EndPoint.y - tf.position.y, 2.0));
 
             int layerMask = 0;
@@ -67,16 +74,19 @@ public class PlayerController : MonoBehaviour
                 Debug.DrawLine(tf.position, new Vector3(hit.point.x,hit.point.y, 0), Color.green, 4, false);
                 Debug.Log("hit a wall at " + hit.point);
                 Grappling = true;
-
+                
             }
             else 
             {
                 Debug.Log("raycast did not hit a wall");
             }
+            */
         }
     }
+
     void duringGrapple()
     {
+        /*
         if(Input.touchCount <= 0 || Input.GetTouch(0).phase != TouchPhase.Began)
         {
            // rb.AddForce( (grapplepoint-new Vector2(tf.position.x,tf.position.y))* GrapplePower, ForceMode2D.Impulse);
@@ -85,6 +95,7 @@ public class PlayerController : MonoBehaviour
         {
             Grappling = false;
         }
+        */
     }
 
 }

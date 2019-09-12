@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class Grapple : MonoBehaviour
 {
-    private Player Source; // the player who created the grapple
-    private Vector2 Target; // where the grapple is aimed
+    public Player Source; // the player who created the grapple
+    public Vector2 Target; // where the grapple is aimed
     private bool Attached; // whether the grapple actually hit or not
-    private Vector2 HitLocation; // where the grapple hit
-    private Enemy EnemyHit; // if the enemy hit an enemy, find its reference here. otherwise null.
-    private float GrapplePower; // how strong the grapple pulls.
+    private Enemy EnemyHit; // if the grapple hit an enemy, find its reference here. otherwise null.
+    [SerializeField] private float GrapplePower; // how strong the grapple pulls.
     
     void Start()
     {
         Source = FindObjectOfType<Player>();
         Attached = false;
-        HitLocation = new Vector2();
         EnemyHit = null;
         
     }
@@ -27,25 +25,34 @@ public class Grapple : MonoBehaviour
         {
             if (EnemyHit == null)
             {
+                //Source.transform.position = Vector3.MoveTowards(Source.transform.position, transform.position, GrapplePower * Time.deltaTime);
+                //Source.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
                 Source.gameObject.GetComponent<Rigidbody2D>().AddForce(
-                    HitLocation - (Vector2)Source.transform.position, ForceMode2D.Force);
+                    (transform.position - Source.gameObject.transform.position)* GrapplePower, ForceMode2D.Impulse );
             }
                 
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, Target, 5 * Time.deltaTime); // move towards the aim point.
+            transform.position = Vector3.MoveTowards(transform.position, Target, 10 * Time.deltaTime);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnDestroy() //TODO: remove any grapple effects before being destroyed. OOF.
     {
-        if( Attached == false )
+        Source.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log("Collision detected!");
+        if( Attached == false && col.gameObject.GetComponent<Player>() == null )
         {
-            EnemyHit = collision.gameObject.GetComponent<Enemy>(); //if it has hit an enemy, it gets stored in Enemyhit.
-            HitLocation = collision.transform.position;
+            EnemyHit = col.gameObject.GetComponent<Enemy>(); //if it has hit an enemy, it gets stored in Enemyhit.
             Attached = true;
             Debug.Log("Hit an object!");
+            Destroy(gameObject.GetComponent<BoxCollider2D>());
+            Destroy(gameObject.GetComponent<Rigidbody2D>());
         }
     }
 }

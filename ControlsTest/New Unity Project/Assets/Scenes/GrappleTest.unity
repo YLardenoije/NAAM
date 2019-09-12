@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 284562872}
   - component: {fileID: 284562871}
   - component: {fileID: 284562870}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -929,6 +929,24 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &310532345 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6080549856580446641, guid: f612c8a2b538c1d4f91d86a34e9333f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1069804481}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &310532351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310532345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2426e998523b9564db16b399038f4b0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1069804481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -939,12 +957,12 @@ PrefabInstance:
     - target: {fileID: 6080549856580446641, guid: f612c8a2b538c1d4f91d86a34e9333f9,
         type: 3}
       propertyPath: m_Name
-      value: player
+      value: playerCharacter
       objectReference: {fileID: 0}
     - target: {fileID: 6080549856580446645, guid: f612c8a2b538c1d4f91d86a34e9333f9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6080549856580446645, guid: f612c8a2b538c1d4f91d86a34e9333f9,
         type: 3}
@@ -996,6 +1014,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6080549856580446646, guid: f612c8a2b538c1d4f91d86a34e9333f9,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 310532351}
+    - target: {fileID: 6080549856580446646, guid: f612c8a2b538c1d4f91d86a34e9333f9,
+        type: 3}
+      propertyPath: grapple
+      value: 
+      objectReference: {fileID: -3469716007093357050, guid: 7259fe73662e5754f89787bc2e7d7def,
+        type: 3}
+    - target: {fileID: 6080549856580446646, guid: f612c8a2b538c1d4f91d86a34e9333f9,
+        type: 3}
+      propertyPath: GrapplePrefab
+      value: 
+      objectReference: {fileID: -3469716007093357050, guid: 7259fe73662e5754f89787bc2e7d7def,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f612c8a2b538c1d4f91d86a34e9333f9, type: 3}
 --- !u!1 &1984057363
@@ -1052,7 +1087,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2005171733}
   - component: {fileID: 2005171732}
-  - component: {fileID: 2005171731}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1060,14 +1094,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &2005171731
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2005171730}
-  m_Enabled: 1
 --- !u!20 &2005171732
 Camera:
   m_ObjectHideFlags: 0
