@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     public float MovementSpeed = 10;
     private bool Grappling = false;
     private Vector2 grapplepoint;
+
+    [SerializeField] private Player player;
+    [SerializeField] private Grapple grapple;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +31,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.AddForce(new Vector2(Input.acceleration.x*MovementSpeed, 0)); //tilting should be working like this?
+        rb.AddForce(new Vector2(Input.acceleration.x*MovementSpeed, 0)); //tilting should be working like this? // i guess it does C:
         
         if(Grappling)
         {
@@ -59,14 +62,14 @@ public class PlayerController : MonoBehaviour
                 Debug.Log(hit.collider);
                 grapplepoint = hit.point;
                 Vector2 pos2D = new Vector2(tf.position.x, tf.position.y);
-                rb.AddForce((hit.point-pos2D)*GrapplePower);
+                rb.AddForce((hit.point-pos2D)*GrapplePower, ForceMode2D.Force);
                 Debug.DrawLine(tf.position, new Vector3(EndPoint.x, EndPoint.y,0),Color.red,4, false);
                 Debug.DrawLine(tf.position, new Vector3(hit.point.x,hit.point.y, 0), Color.green, 4, false);
                 Debug.Log("hit a wall at " + hit.point);
                 Grappling = true;
 
             }
-            else
+            else 
             {
                 Debug.Log("raycast did not hit a wall");
             }
