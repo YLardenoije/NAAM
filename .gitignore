@@ -34,3 +34,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+#i added stuff lol xoxo martijn
+ControlsTest/New Unity Project/Assets/ground tiles.meta
+ControlsTest/New Unity Project/ProjectSettings/GraphicsSettings.asset
+ControlsTest/New Unity Project/ProjectSettings/UnityConnectSettings.asset
