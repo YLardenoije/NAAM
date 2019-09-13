@@ -9,13 +9,20 @@ public class Grapple : MonoBehaviour
     private bool Attached; // whether the grapple actually hit or not
     private Enemy EnemyHit; // if the grapple hit an enemy, find its reference here. otherwise null.
     [SerializeField] private float GrapplePower; // how strong the grapple pulls.
-    
+    RaycastHit2D hit;
     void Start()
     {
         Source = FindObjectOfType<Player>();
         Attached = false;
         EnemyHit = null;
-        
+
+        int magicNumber = 100;
+        int layermask = 1 << LayerMask.NameToLayer("Player");
+        layermask = ~layermask;
+        hit = Physics2D.Raycast(transform.position,
+            Target - new Vector2(transform.position.x, transform.position.y),
+            magicNumber, layermask);
+
     }
 
     
@@ -26,7 +33,7 @@ public class Grapple : MonoBehaviour
             if (EnemyHit == null)
             {
                 //Source.transform.position = Vector3.MoveTowards(Source.transform.position, transform.position, GrapplePower * Time.deltaTime);
-                //Source.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+                Source.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
                 Source.gameObject.GetComponent<Rigidbody2D>().AddForce(
                     (transform.position - Source.gameObject.transform.position)* GrapplePower, ForceMode2D.Impulse );
             }
@@ -34,7 +41,9 @@ public class Grapple : MonoBehaviour
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, Target, 10 * Time.deltaTime);
+            
+          
+           transform.position = Vector3.MoveTowards(transform.position, hit.point, 10 * Time.deltaTime);
         }
     }
 

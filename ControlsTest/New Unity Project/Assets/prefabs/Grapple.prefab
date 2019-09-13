@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7076677880992793288}
   - component: {fileID: -3469716007093357050}
   - component: {fileID: 8094156973041382608}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grapple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Source: {fileID: 0}
   Target: {x: 0, y: 0}
-  GrapplePower: 0.1
+  GrapplePower: 0.5
 --- !u!61 &8094156973041382608
 BoxCollider2D:
   m_ObjectHideFlags: 0
