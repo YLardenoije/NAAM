@@ -35,14 +35,12 @@ public class Grapple : MonoBehaviour
                 //Source.transform.position = Vector3.MoveTowards(Source.transform.position, transform.position, GrapplePower * Time.deltaTime);
                 Source.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
                 Source.gameObject.GetComponent<Rigidbody2D>().AddForce(
-                    (transform.position - Source.gameObject.transform.position)* GrapplePower, ForceMode2D.Impulse );
+                    (transform.position - Source.gameObject.transform.position).normalized* GrapplePower, ForceMode2D.Impulse );
             }
                 
         }
         else
         {
-            
-          
            transform.position = Vector3.MoveTowards(transform.position, hit.point, 10 * Time.deltaTime);
         }
     }
