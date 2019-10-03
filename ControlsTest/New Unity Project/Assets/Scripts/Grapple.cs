@@ -7,7 +7,7 @@ public class Grapple : MonoBehaviour
     public Player Source; // the player who created the grapple
     public Vector2 Target; // where the grapple is aimed
     private bool Attached; // whether the grapple actually hit or not
-    private Enemy EnemyHit; // if the grapple hit an enemy, find its reference here. otherwise null.
+    [SerializeField]private Enemy EnemyHit; // if the grapple hit an enemy, find its reference here. otherwise null.
     [SerializeField] private float GrapplePower; // how strong the grapple pulls.
     [SerializeField] private float GrappleTravelSpeed;
     RaycastHit2D hit;
