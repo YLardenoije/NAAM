@@ -9,6 +9,7 @@ public class Grapple : MonoBehaviour
     private bool Attached; // whether the grapple actually hit or not
     private Enemy EnemyHit; // if the grapple hit an enemy, find its reference here. otherwise null.
     [SerializeField] private float GrapplePower; // how strong the grapple pulls.
+    [SerializeField] private float GrappleTravelSpeed;
     RaycastHit2D hit;
     void Start()
     {
@@ -30,24 +31,29 @@ public class Grapple : MonoBehaviour
     {
         if( Attached )
         {
-            if (EnemyHit == null)
+            if (EnemyHit != null)
             {
-                //Source.transform.position = Vector3.MoveTowards(Source.transform.position, transform.position, GrapplePower * Time.deltaTime);
-                Source.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
-                Source.gameObject.GetComponent<Rigidbody2D>().AddForce(
-                    (transform.position - Source.gameObject.transform.position).normalized* GrapplePower, ForceMode2D.Impulse );
+                EnemyHit.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+                EnemyHit.gameObject.GetComponent<Rigidbody2D>().AddForce(
+                    (Source.gameObject.transform.position - EnemyHit.gameObject.transform.position).normalized * GrapplePower, ForceMode2D.Impulse);
             }
-                
+            Source.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+            Source.gameObject.GetComponent<Rigidbody2D>().AddForce(
+                (transform.position - Source.gameObject.transform.position).normalized * GrapplePower, ForceMode2D.Impulse);
         }
         else
         {
-           transform.position = Vector3.MoveTowards(transform.position, hit.point, 10 * Time.deltaTime);
+           transform.position = Vector3.MoveTowards(transform.position, hit.point, GrappleTravelSpeed * Time.deltaTime);
         }
     }
 
     private void OnDestroy() //TODO: remove any grapple effects before being destroyed. OOF.
     {
         Source.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
+        if( EnemyHit != null )
+        {
+            EnemyHit.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D col)

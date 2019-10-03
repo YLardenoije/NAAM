@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: GlobalData
   m_EditorClassIdentifier: 
   SelectedItemType: 0
+  SelectedMovementItem: 0
+  SelectedCombatItem: 0
+  SelectedHandedness: 0

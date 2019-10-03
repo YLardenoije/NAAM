@@ -118,6 +118,7 @@ MonoBehaviour:
   Source: {fileID: 0}
   Target: {x: 0, y: 0}
   GrapplePower: 0.5
+  GrappleTravelSpeed: 30
 --- !u!61 &8094156973041382608
 BoxCollider2D:
   m_ObjectHideFlags: 0
