@@ -18,6 +18,7 @@ public class ToggleEquipButtonHandler : MonoBehaviour
 
     public void OnButtonPress()
     {
+        Debug.Log("BUTTON PRESSED");
         //toggle the enable status of both text fields
         Texts[(int)GlobalData.ItemTypes.CombatItem].enabled ^= true;
         Texts[(int)GlobalData.ItemTypes.MovementItem].enabled ^= true;
