@@ -5,43 +5,35 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class Projectile : MonoBehaviour
 {
-    public bool IsFired = true;
-    private Transform tf;
-    public Player Source; // the player who created the projectile
-    public Vector2 Target;
-    RaycastHit2D hit;
-    public bool AtTarget = false;
-    private Collider2D MyColl;
-    // Start is called before the first frame update
+    public GameObject Source; // creater of this. should be passed by the creator.
+    public Vector2 Target; // where to go to.
+    private RaycastHit2D hit; // the actual hit location
+    private bool HasHitSomething;
+    [SerializeField] private float Speed;
+    
     void Start()
     {
-        tf = GetComponent<Transform>();
-        int magicNumber = 100;
-        int layermask = 1 << LayerMask.NameToLayer("Player");
+        HasHitSomething = false;
+
+        int layermask = 1 << gameObject.layer;
         layermask = ~layermask;
+        int magicNumber = 100; //this makes sure the projectile keeps flying forever, until it hits.
+
         hit = Physics2D.Raycast(transform.position,
             Target - new Vector2(transform.position.x, transform.position.y),
             magicNumber, layermask);
     }
     
-
-    public void MovementThisFrame(Vector2 EndPoint, bool EndAtEndPoint, int TicksPerUnit = 1)//fires from current location
-    {
-
-        Vector2 vec  = (EndPoint - new Vector2(tf.position.x, tf.position.y)) ;
-
-    }
-    // Update is called once per frame
     void Update()
     {
-        if (! AtTarget)
+        if (!HasHitSomething)
         {
-            transform.position = Vector3.MoveTowards(transform.position, hit.point, 10 * Time.deltaTime);
-        }
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        
+            transform.position = Vector3.MoveTowards(transform.position, hit.point, Speed * Time.deltaTime);
+        }        
     }
 
+    public void Collided() // the specific projectile code ( ex. Grapple ) should call this function on collision.
+    {
+        HasHitSomething = true;
+    }
 }

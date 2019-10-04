@@ -15,8 +15,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: D:/school/S4/GD/audio/FmodPrject/Assignment2/Assignment2.fspro
-  SourceBankPathUnformatted: D:/school/S4/GD/audio/FmodPrject/Assignment2/Build
+  sourceProjectPath: Assets/Audio/Assignment2.fspro
+  SourceBankPathUnformatted: Assets/Audio/Build
   AutomaticEventLoading: 1
   BankLoadType: 0
   AutomaticSampleLoading: 0
