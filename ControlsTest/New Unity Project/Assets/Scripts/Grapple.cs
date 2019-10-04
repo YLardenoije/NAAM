@@ -7,15 +7,17 @@ public class Grapple : MonoBehaviour
     public Player Source; // the player who created the grapple
     public Vector2 Target; // where the grapple is aimed
     private bool Attached; // whether the grapple actually hit or not
-    [SerializeField]private Enemy EnemyHit; // if the grapple hit an enemy, find its reference here. otherwise null.
+    [SerializeField] private GameObject HitObject; // if the grapple hit an enemy, find its reference here. otherwise null.
     [SerializeField] private float GrapplePower; // how strong the grapple pulls.
     [SerializeField] private float GrappleTravelSpeed;
     RaycastHit2D hit;
+    private bool HitObjectIsEnemy;
     void Start()
     {
         Source = FindObjectOfType<Player>();
         Attached = false;
-        EnemyHit = null;
+        HitObject = null;
+        HitObjectIsEnemy = false;
 
         int magicNumber = 100;
         int layermask = 1 << LayerMask.NameToLayer("Player");
@@ -31,15 +33,23 @@ public class Grapple : MonoBehaviour
     {
         if( Attached )
         {
-            if (EnemyHit != null)
+            if( HitObjectIsEnemy )
             {
-                EnemyHit.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
-                EnemyHit.gameObject.GetComponent<Rigidbody2D>().AddForce(
-                    (Source.gameObject.transform.position - EnemyHit.gameObject.transform.position).normalized * GrapplePower, ForceMode2D.Impulse);
+                transform.position = HitObject.transform.position;
+                //HitObject.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+                HitObject.gameObject.GetComponent<Rigidbody2D>().AddForce(
+                (Source.gameObject.transform.position - HitObject.gameObject.transform.position).normalized * GrapplePower, ForceMode2D.Impulse);
+                //Source.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+                Source.gameObject.GetComponent<Rigidbody2D>().AddForce(
+                    (HitObject.transform.position - Source.gameObject.transform.position).normalized * GrapplePower, ForceMode2D.Impulse);
             }
-            Source.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
-            Source.gameObject.GetComponent<Rigidbody2D>().AddForce(
-                (transform.position - Source.gameObject.transform.position).normalized * GrapplePower, ForceMode2D.Impulse);
+            else
+            {
+                Source.gameObject.GetComponent<Rigidbody2D>().AddForce(
+                    (transform.position - Source.gameObject.transform.position).normalized * GrapplePower, ForceMode2D.Impulse);
+            }
+            
+            
         }
         else
         {
@@ -49,11 +59,11 @@ public class Grapple : MonoBehaviour
 
     private void OnDestroy() //TODO: remove any grapple effects before being destroyed. OOF.
     {
-        Source.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
+        /*Source.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
         if( EnemyHit != null )
         {
             EnemyHit.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
-        }
+        }*/
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -61,7 +71,11 @@ public class Grapple : MonoBehaviour
         Debug.Log("Collision detected!");
         if( Attached == false && col.gameObject.GetComponent<Player>() == null )
         {
-            EnemyHit = col.gameObject.GetComponent<Enemy>(); //if it has hit an enemy, it gets stored in Enemyhit.
+            HitObject = col.gameObject;
+            if( HitObject.GetComponent<Enemy>() != null )
+            {
+                HitObjectIsEnemy = true;
+            }
             Attached = true;
             Debug.Log("Hit an object!");
             Destroy(gameObject.GetComponent<BoxCollider2D>());
