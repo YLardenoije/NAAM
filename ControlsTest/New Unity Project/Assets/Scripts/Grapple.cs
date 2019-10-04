@@ -64,8 +64,8 @@ public class Grapple : MonoBehaviour
             EnemyHit = col.gameObject.GetComponent<Enemy>(); //if it has hit an enemy, it gets stored in Enemyhit.
             Attached = true;
             Debug.Log("Hit an object!");
-            Destroy(gameObject.GetComponent<BoxCollider2D>());
-            Destroy(gameObject.GetComponent<Rigidbody2D>());
+            //Destroy(gameObject.GetComponent<BoxCollider2D>());
+            //Destroy(gameObject.GetComponent<Rigidbody2D>());
         }
     }
 }
