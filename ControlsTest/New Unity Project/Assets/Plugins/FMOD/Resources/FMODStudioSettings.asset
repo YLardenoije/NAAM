@@ -75,7 +75,8 @@ MonoBehaviour:
   - Platform: 20
     Value: 32
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Build/Desktop/Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264

@@ -17,7 +17,7 @@ public class ToggleEquipButtonHandler : MonoBehaviour
         Texts[(int)GlobalData.ItemTypes.CombatItem].enabled = true;
         Texts[(int)GlobalData.ItemTypes.MovementItem].enabled = false;
     }
-
+    
     public void OnButtonPress()
     {
         button.image.color = Color.red; //DEBUG, turns the button red on press
