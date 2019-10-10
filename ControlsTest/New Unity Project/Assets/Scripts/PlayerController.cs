@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.EventSystems;
+
 [RequireComponent(typeof (Transform))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] EventSystem ES;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GlobalData GlobalData;
     private Transform tf;
@@ -25,6 +28,10 @@ public class PlayerController : MonoBehaviour
         if (mainCamera == null)
         {
             mainCamera = FindObjectOfType<Camera>();
+        }
+        if (ES == null)
+        {
+            ES = FindObjectOfType<EventSystem>();
         }
     }
 
@@ -77,7 +84,11 @@ public class PlayerController : MonoBehaviour
             if (t.phase == TouchPhase.Began)
             {
                 Vector2 Endpoint = mainCamera.ScreenToWorldPoint(t.position);
-                Fire(Endpoint);
+                if (!EventSystem.current.IsPointerOverGameObject(t.fingerId))
+                {
+                    Fire(Endpoint);
+                    
+                }
             }
         }
     }
