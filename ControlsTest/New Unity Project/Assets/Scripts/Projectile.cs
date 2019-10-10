@@ -6,6 +6,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public Vector2 Target; // where to go to.
+    public Vector2 Origin; // where we came from
     public RaycastHit2D hit; // the actual hit location
     private bool HasHitSomething;
     [SerializeField] private float Speed;
@@ -22,13 +23,16 @@ public class Projectile : MonoBehaviour
         hit = Physics2D.Raycast(transform.position,
             Target - new Vector2(transform.position.x, transform.position.y),
             magicNumber, layermask);
+        Origin = transform.position;
     }
     
     void Update()
     {
         if (!HasHitSomething)
         {
-            transform.position = Vector3.MoveTowards(transform.position, hit.point, Speed * Time.deltaTime);
+            transform.Translate(
+                (hit.point - Origin).normalized * Speed * Time.deltaTime
+                , Space.Self );
         }        
     }
 
