@@ -58,13 +58,13 @@ public class PlayerController : MonoBehaviour
                         break;
                 }
                 break;
-            case GlobalData.ItemTypes.CombatItem:
-                switch (GlobalData.SelectedCombatItem)
-                {
-                    case GlobalData.CombatItems.FireBall:
-                        FireBall FB = Instantiate(FireBallPrefab, transform.position, transform.rotation);
-                        FB.Target = EndPoint;
-                        FB.Source = gameObject;
+                case GlobalData.ItemTypes.CombatItem:
+                    switch( GlobalData.SelectedCombatItem )
+                    {
+                        case GlobalData.CombatItems.FireBall:
+                            FireBall FB = Instantiate(FireBallPrefab, transform.position, transform.rotation);
+                            FB.Target = EndPoint;
+                            FB.Source = player.gameObject;
                         break;
                 }
                 break;
