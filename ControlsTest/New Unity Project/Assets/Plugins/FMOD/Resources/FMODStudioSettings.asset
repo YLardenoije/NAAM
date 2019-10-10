@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   SwitchSettingsMigration: 1
-  HasSourceProject: 1
+  HasSourceProject: 0
   HasPlatforms: 1
   sourceProjectPath: Assets/Audio/Fmod Project/Assignment2/Assignment2.fspro
-  SourceBankPathUnformatted: Assets/Audio/Fmod Project/Assignment2/Build
+  SourceBankPathUnformatted: Assets/Audio/Fmod Project/Assignment2
   AutomaticEventLoading: 1
   BankLoadType: 0
   AutomaticSampleLoading: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
     Value: 0
   OverlaySettings:
   - Platform: 1
-    Value: 1
+    Value: 0
   - Platform: 2
     Value: 0
   - Platform: 20
@@ -59,7 +59,7 @@ MonoBehaviour:
     Value: 0
   BankDirectorySettings:
   - Platform: 2
-    Value: Desktop
+    Value: 
   VirtualChannelSettings:
   - Platform: 1
     Value: 1024
@@ -76,7 +76,7 @@ MonoBehaviour:
     Value: 32
   Plugins: []
   MasterBanks:
-  - Master
+  - Build/Desktop/Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
