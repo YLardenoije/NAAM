@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class GameEventHandler : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class GameEventHandler : MonoBehaviour
         player = (Player)GlobalData.GetPlayerAndAddListener(this);
         if ( player != null )
         {
-            player.OnPlayerDeath.AddListener(OnPlayerDeath);
+            player.OnDeathEvent.AddListener(OnPlayerDeath);
+            Debug.Log("Subbed to death event.");
         }
         
     }
@@ -34,15 +36,13 @@ public class GameEventHandler : MonoBehaviour
     public void OnPlayerDeath()
     {
         Debug.Log("I came here Wgooo");
-        GameObject[] GameObjects;
-        GameObjects = Canvas.GetComponents<GameObject>();
-        GameObjects[0].SetActive(false);
-        GameObjects[1].SetActive(true);
+        //now somehow turn on the right scene thingy.
     }
 
     public void PlayerChanged()
     {
         player = GlobalData.GetPlayer();
-        player.OnPlayerDeath.AddListener(OnPlayerDeath);
+        player.OnDeathEvent.AddListener(OnPlayerDeath);
+        Debug.Log("Subbed to death event.");
     }
 }

@@ -21,6 +21,7 @@ public class LivingThing : MonoBehaviour
 
     public void Die()
     {
+        Debug.Log(gameObject.name + " Died.");
         //call the OnDeath function of the parent here.
         OnDeathEvent.Invoke();
     }
