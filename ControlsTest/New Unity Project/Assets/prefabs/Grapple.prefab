@@ -50,7 +50,7 @@ MonoBehaviour:
   Source: {fileID: 0}
   Target: {x: 0, y: 0}
   HitObject: {fileID: 0}
-  GrapplePower: 0.5
+  GrapplePower: 1
 --- !u!114 &1880851650191131502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,8 +63,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d21dcbf7f26531840a13862947598ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Source: {fileID: 0}
   Target: {x: 0, y: 0}
+  Origin: {x: 0, y: 0}
   Speed: 30
 --- !u!212 &3177782376467712278
 SpriteRenderer:
