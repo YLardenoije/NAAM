@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         rb.AddForce(new Vector2(Input.acceleration.x*MovementSpeed, 0)); //tilting should be working like this? // i guess it does C:
-        grappleStart();
+        HandleTouches();
     }
     void Fire( Vector2 _EndPoint)
     {
@@ -70,14 +70,15 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
-    void grappleStart()
+    void HandleTouches()
     {
-        
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        foreach (Touch t in Input.touches)
         {
-            Touch touch = Input.GetTouch(0);
-            mainCamera.ScreenToWorldPoint(touch.position);
-
+            if (t.phase == TouchPhase.Began)
+            {
+                Vector2 Endpoint = mainCamera.ScreenToWorldPoint(t.position);
+                Fire(Endpoint);
+            }
         }
     }
 
