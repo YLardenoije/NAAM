@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GlobalData.player = this;
+        GlobalData.SetPlayer(this);
         livingThing = gameObject.GetComponent<LivingThing>();
         livingThing.OnDeathEvent.AddListener(OnDeath);
         OnPlayerDeath = new UnityEvent();
@@ -33,6 +33,6 @@ public class Player : MonoBehaviour
 
     private void OnDestroy()
     {
-        GlobalData.player = null;
+        GlobalData.RemovePlayer();
     }
 }

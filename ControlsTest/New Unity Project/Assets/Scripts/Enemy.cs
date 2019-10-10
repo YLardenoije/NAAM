@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
         livingThing.OnDeathEvent.AddListener( OnDeath );
         Rend = gameObject.GetComponent<Renderer>();
         AttackTimer = 0;
-        player = GlobalData.player;
+        player = GlobalData.GetPlayerAndAddListener(this);
     }
 
     // Update is called once per frame
@@ -59,5 +59,10 @@ public class Enemy : MonoBehaviour
             FB.Target = player.transform.position;
             FB.Source = gameObject;
         }
+    }
+
+    public void PlayerChanged()
+    {
+        player = GlobalData.GetPlayer();
     }
 }
