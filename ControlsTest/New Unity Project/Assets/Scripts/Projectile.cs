@@ -6,7 +6,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public Vector2 Target; // where to go to.
-    private RaycastHit2D hit; // the actual hit location
+    public RaycastHit2D hit; // the actual hit location
     private bool HasHitSomething;
     [SerializeField] private float Speed;
     
@@ -21,6 +21,7 @@ public class Projectile : MonoBehaviour
         hit = Physics2D.Raycast(transform.position,
             Target - new Vector2(transform.position.x, transform.position.y),
             magicNumber, layermask);
+        Debug.Log(hit.point);
     }
     
     void Update()
