@@ -34,34 +34,29 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(new Vector2(Input.acceleration.x*MovementSpeed, 0)); //tilting should be working like this? // i guess it does C:
         grappleStart();
     }
-    //just test touches and raycasts, should be changed to add force in this direction because we want that rubber band effect.
-    void grappleStart()
+    void Fire( Vector2 _EndPoint)
     {
-        
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        Vector2 EndPoint = _EndPoint;
+        switch (GlobalData.SelectedItemType)
         {
-            Touch touch = Input.GetTouch(0);
-            Vector2 EndPoint = mainCamera.ScreenToWorldPoint(touch.position);
-            switch( GlobalData.SelectedItemType )
-            {
-                case GlobalData.ItemTypes.MovementItem:
-                    switch( GlobalData.SelectedMovementItem )
-                    {
-                        case GlobalData.MovementItems.Grapple:
-                            if (CurrentGrapple == null)
-                            {
-                                CurrentGrapple = Instantiate(GrapplePrefab, transform.position, transform.rotation);
-                                CurrentGrapple.Target = EndPoint;
-                                CurrentGrapple.Source = player.gameObject;
-                            }
-                            else
-                            {
-                                Destroy(CurrentGrapple.gameObject);
+            case GlobalData.ItemTypes.MovementItem:
+                switch (GlobalData.SelectedMovementItem)
+                {
+                    case GlobalData.MovementItems.Grapple:
+                        if (CurrentGrapple == null)
+                        {
+                            CurrentGrapple = Instantiate(GrapplePrefab, transform.position, transform.rotation);
+                            CurrentGrapple.Target = EndPoint;
+                            CurrentGrapple.Source = player.gameObject;
+                        }
+                        else
+                        {
+                            Destroy(CurrentGrapple.gameObject);
 
-                                CurrentGrapple = null;
-                            }
+                            CurrentGrapple = null;
+                        }
                         break;
-                    }
+                }
                 break;
                 case GlobalData.ItemTypes.CombatItem:
                     switch( GlobalData.SelectedCombatItem )
@@ -71,10 +66,19 @@ public class PlayerController : MonoBehaviour
                             FB.Target = EndPoint;
                             FB.Source = player.gameObject;
                         break;
-                    }
+                }
                 break;
-            }
-            
         }
     }
+    void grappleStart()
+    {
+        
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            Touch touch = Input.GetTouch(0);
+            mainCamera.ScreenToWorldPoint(touch.position);
+
+        }
+    }
+
 }
