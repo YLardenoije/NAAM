@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9e548f94a270e4eba90c8640d4f3df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Target: {x: 0, y: 0}
+  Source: {fileID: 0}
 --- !u!114 &7906331030256008995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,7 +61,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d21dcbf7f26531840a13862947598ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Source: {fileID: 0}
   Target: {x: 0, y: 0}
   Speed: 15
 --- !u!212 &4773922455064962934
@@ -141,7 +142,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
