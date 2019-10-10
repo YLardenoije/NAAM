@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4773922455064962934}
   - component: {fileID: 6704503235161257230}
   - component: {fileID: 6824684951167936954}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8629037503731333111}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1

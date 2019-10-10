@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalData: {fileID: 11400000, guid: 8e6859b43508577449bcb80fe7ac0759, type: 2}
-  button: {fileID: 0}
+  button: {fileID: 1238008895731769962}
 --- !u!1 &1238008896335778292
 GameObject:
   m_ObjectHideFlags: 0

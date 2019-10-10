@@ -16,3 +16,4 @@ MonoBehaviour:
   SelectedMovementItem: 0
   SelectedCombatItem: 0
   SelectedHandedness: 0
+  player: {fileID: 0}
