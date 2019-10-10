@@ -6,19 +6,21 @@ using FMODUnity;
 
 public class FMODParameterEditor : MonoBehaviour
 {
-    public int Intensity=0;
-    private float threat;
+    [SerializeField] GlobalData GD;
+
     FMOD.Studio.EventInstance FmodEv;
     // Start is called before the first frame update
     void Start()
     {
         FmodEv = GetComponent<StudioEventEmitter>().EventInstance;
-        FmodEv.getParameterByName("ThreatLevel", out threat);
+        //FmodEv.getParameterByName("ThreatLevel", out threat);
+        GD.IntensityChanged.AddListener(OnIntensityChange);
     }
 
     // Update is called once per frame
-    void Update()
+    public void OnIntensityChange()
     {
-        FmodEv.setParameterByName("ThreatLevel",(float)Intensity);
+        FmodEv.setParameterByName("ThreatLevel", GD.Intensity);
     }
+    
 }
