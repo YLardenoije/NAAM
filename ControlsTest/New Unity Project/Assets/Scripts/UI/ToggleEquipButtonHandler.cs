@@ -7,10 +7,12 @@ public class ToggleEquipButtonHandler : MonoBehaviour
 {
     [SerializeField] private GlobalData GlobalData;
     private Text[] Texts;
+    [SerializeField] private Button button;
     // Start is called before the first frame update
     void Start()
     {
-        Texts = GetComponentsInChildren<Text>();
+        button = FindObjectOfType<Button>();
+        Texts = button.GetComponentsInChildren<Text>();
         GlobalData.SelectedItemType = GlobalData.ItemTypes.MovementItem;
         Texts[(int)GlobalData.ItemTypes.CombatItem].enabled = true;
         Texts[(int)GlobalData.ItemTypes.MovementItem].enabled = false;
@@ -18,13 +20,13 @@ public class ToggleEquipButtonHandler : MonoBehaviour
 
     public void OnButtonPress()
     {
-        Debug.Log("BUTTON PRESSED");
+        button.image.color = Color.red; //DEBUG, turns the button red on press
         //toggle the enable status of both text fields
-        Texts[(int)GlobalData.ItemTypes.CombatItem].enabled ^= true;
-        Texts[(int)GlobalData.ItemTypes.MovementItem].enabled ^= true;
+        Texts[(int)GlobalData.ItemTypes.CombatItem].enabled = !Texts[(int)GlobalData.ItemTypes.CombatItem].enabled;
+        Texts[(int)GlobalData.ItemTypes.MovementItem].enabled = !Texts[(int)GlobalData.ItemTypes.MovementItem].enabled;
 
         //switch the equipped item type
-        if( GlobalData.SelectedItemType == GlobalData.ItemTypes.MovementItem )
+        if ( GlobalData.SelectedItemType == GlobalData.ItemTypes.MovementItem )
         {
             GlobalData.SelectedItemType = GlobalData.ItemTypes.CombatItem;
         }
@@ -32,7 +34,11 @@ public class ToggleEquipButtonHandler : MonoBehaviour
         {
             GlobalData.SelectedItemType = GlobalData.ItemTypes.MovementItem;
         }
-        
+
+        if( GlobalData.SelectedItemType == GlobalData.ItemTypes.CombatItem )
+        {
+            button.image.color = Color.blue; //DEBUG
+        }
     }
     
 

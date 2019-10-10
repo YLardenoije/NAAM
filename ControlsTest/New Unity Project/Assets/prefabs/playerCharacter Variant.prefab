@@ -104,6 +104,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -3469716007093357050, guid: 7259fe73662e5754f89787bc2e7d7def,
         type: 3}
+    - target: {fileID: 6080549856580446646, guid: f612c8a2b538c1d4f91d86a34e9333f9,
+        type: 3}
+      propertyPath: FireBallPrefab
+      value: 
+      objectReference: {fileID: 7900179182737785616, guid: efcabe6a37774af488cc1a56bfb26b34,
+        type: 3}
     - target: {fileID: 6080549856831090768, guid: f612c8a2b538c1d4f91d86a34e9333f9,
         type: 3}
       propertyPath: m_LocalPosition.x

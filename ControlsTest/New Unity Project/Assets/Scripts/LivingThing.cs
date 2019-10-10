@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class LivingThing : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,8 +16,8 @@ public class Player : MonoBehaviour
         
     }
 
-    public void OnDeath()
+    public void Die()
     {
-
+        //call the OnDeath function of the parent here.
     }
 }

@@ -15,4 +15,9 @@ public class Enemy : MonoBehaviour
     {
         
     }
+
+    public void OnDeath()
+    {
+        gameObject.SetActive(false);
+    }
 }
