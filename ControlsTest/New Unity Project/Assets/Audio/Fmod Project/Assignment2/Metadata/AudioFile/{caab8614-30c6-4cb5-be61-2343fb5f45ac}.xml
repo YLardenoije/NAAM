@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{caab8614-30c6-4cb5-be61-2343fb5f45ac}">
+		<property name="assetPath">
+			<value>TheMissionMusic_StringsAccent_02.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b93dcf3e-714b-48af-ab49-00050861adcd}</destination>
+		</relationship>
+	</object>
+</objects>

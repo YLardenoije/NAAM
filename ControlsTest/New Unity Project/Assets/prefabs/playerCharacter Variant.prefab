@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2426e998523b9564db16b399038f4b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!81 &2930461011951828331
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3768226895670194184}
+  m_Enabled: 1
 --- !u!1001 &6929101960599116217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 6080549856580446641, guid: f612c8a2b538c1d4f91d86a34e9333f9,
         type: 3}
       propertyPath: m_Name
-      value: playerCharacter
+      value: playerCharacter Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6080549856580446645, guid: f612c8a2b538c1d4f91d86a34e9333f9,
         type: 3}

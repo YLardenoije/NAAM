@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{8373ffd8-730a-4e3a-89f1-7361b5995559}">
+		<property name="name">
+			<value>NearMiss</value>
+		</property>
+		<relationship name="folder">
+			<destination>{2a7637ce-417f-4dec-a9c2-061d5bb836c9}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{45c3aba5-ae5c-497d-8480-bed73fd3ef11}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{45c3aba5-ae5c-497d-8480-bed73fd3ef11}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

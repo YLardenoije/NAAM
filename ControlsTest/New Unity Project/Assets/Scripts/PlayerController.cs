@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
             {
                 CurrentGrapple = Instantiate(GrapplePrefab, transform.position, transform.rotation);
                 CurrentGrapple.Target = EndPoint;
-                CurrentGrapple.Source = player;
+                CurrentGrapple.Source = player.gameObject;
             }
             else
             {
