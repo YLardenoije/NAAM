@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f30158b25854adf4f9bf5a5b8cc9175d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ES: {fileID: 0}
   mainCamera: {fileID: 0}
   GlobalData: {fileID: 11400000, guid: 8e6859b43508577449bcb80fe7ac0759, type: 2}
   MovementSpeed: 50
@@ -71,6 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2426e998523b9564db16b399038f4b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GlobalData: {fileID: 11400000, guid: 8e6859b43508577449bcb80fe7ac0759, type: 2}
 --- !u!114 &-6541318514367280733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,6 +85,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afdda6a3c0e376849bd2a6aaab77823a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!212 &6080549856580446644
 SpriteRenderer:
   m_ObjectHideFlags: 0

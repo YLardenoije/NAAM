@@ -22,6 +22,7 @@ public class FireBall : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        Debug.Log("Hit:" + col.gameObject.name);
         if (col.gameObject != Source )
         {
             LivingThing livingThing = col.gameObject.GetComponent<LivingThing>();

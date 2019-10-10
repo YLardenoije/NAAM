@@ -51,11 +51,9 @@ public class Grapple : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("Collision detected!");
         if( Attached == false && col.gameObject.GetComponent<Player>() == null )
         {
             projectile.Collided();
-            Debug.Log("Hit an object!");
             Attached = true;
             HitObject = col.gameObject;
             HitLoc = transform.position;
