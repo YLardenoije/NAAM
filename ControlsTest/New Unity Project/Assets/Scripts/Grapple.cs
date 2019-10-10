@@ -29,7 +29,7 @@ public class Grapple : MonoBehaviour
     {
         if( Attached )
         {
-            if( HitObjectIsEnemy )
+            if( HitObjectIsEnemy && HitObject != null )
             {
                 
                 //HitObject.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
