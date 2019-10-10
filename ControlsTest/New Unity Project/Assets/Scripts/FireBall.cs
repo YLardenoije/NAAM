@@ -20,21 +20,21 @@ public class FireBall : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("Collision detected!");
         LivingThing livingThing = col.gameObject.GetComponent<LivingThing>();
-        if ( livingThing != null && livingThing.gameObject != Source )
+        Debug.Log(livingThing.gameObject);
+        if (livingThing != null && livingThing.gameObject != Source)
         {
             livingThing.Die(); //OOF
-            Destroy(gameObject); //FireBall hit something and disappears.
             projectile.Collided();
+            Destroy(gameObject); //FireBall hit something and disappears.
         }
-        else if( livingThing.gameObject != Source )
+        else if (livingThing.gameObject != Source)
         {
-            Destroy(gameObject); //FireBall hit something and disappears.
             projectile.Collided();
+            Destroy(gameObject); //FireBall hit something and disappears.
         }
-        Destroy(gameObject); //FireBall hit something and disappears.
     }
 }

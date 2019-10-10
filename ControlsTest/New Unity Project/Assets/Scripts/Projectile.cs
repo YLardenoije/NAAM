@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class Projectile : MonoBehaviour
 {
-    public GameObject Source; // creater of this. should be passed by the creator.
     public Vector2 Target; // where to go to.
     private RaycastHit2D hit; // the actual hit location
     private bool HasHitSomething;

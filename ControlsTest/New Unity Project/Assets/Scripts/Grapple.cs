@@ -16,7 +16,6 @@ public class Grapple : MonoBehaviour
     void Start()
     {
         projectile = gameObject.GetComponent<Projectile>();
-        projectile.Source = Source;
         projectile.Target = Target;
 
         Attached = false;

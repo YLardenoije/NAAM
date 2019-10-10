@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
                         case GlobalData.CombatItems.FireBall:
                             FireBall FB = Instantiate(FireBallPrefab, transform.position, transform.rotation);
                             FB.Target = EndPoint;
-                            FB.Source = player.gameObject;
+                            FB.Source = gameObject;
                         break;
                     }
                 break;
