@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
         Rend = gameObject.GetComponent<Renderer>();
         AttackTimer = 0;
         player = GlobalData.GetPlayerAndAddListener(this);
+        GlobalData.AddEnemy(this);
     }
 
     // Update is called once per frame
@@ -64,5 +65,10 @@ public class Enemy : MonoBehaviour
     public void PlayerChanged()
     {
         player = GlobalData.GetPlayer();
+    }
+
+    public void OnDestroy()
+    {
+        GlobalData.RemoveEnemy(this);
     }
 }

@@ -19,7 +19,7 @@ public class GameEventHandler : MonoBehaviour
             player.livingThing.OnDeathEvent.AddListener(OnPlayerDeath);
             Debug.Log("Subbed to death event.");
         }
-        
+        GlobalData.EnemyCountChanged.AddListener(CheckForGameVictory);
     }
 
     // Update is called once per frame
@@ -56,5 +56,24 @@ public class GameEventHandler : MonoBehaviour
         player = GlobalData.GetPlayer();
         player.livingThing.OnDeathEvent.AddListener(OnPlayerDeath);
         Debug.Log("Subbed to death event.");
+    }
+
+    public void CheckForGameVictory()
+    {
+        if( GlobalData.LivingEnemiesCount() == 0 )
+        {
+            InGameMenuIndentifier[] items = canvas.GetComponentsInChildren<InGameMenuIndentifier>(true);
+            foreach (InGameMenuIndentifier i in items)
+            {
+                if (i.gameObject.name == "Won")
+                {
+                    i.gameObject.SetActive(true);
+                }
+                else
+                {
+                    i.gameObject.SetActive(false);
+                }
+            }
+        }
     }
 }

@@ -15,4 +15,10 @@ public class SceneSelector: MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0);
+        SceneManager.UnloadSceneAsync(0);
+    }
 }
