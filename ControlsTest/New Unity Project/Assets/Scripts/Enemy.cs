@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
 
     public bool CanSeePlayer;
     public float AttackChargeTimeInSeconds;
-
+    public float IntensityValue = 30;
     private Renderer Rend;
     private Player player;
     // Start is called before the first frame update
@@ -28,7 +28,17 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Rend.isVisible && !CanSeePlayer) //since we do this before CanSeePlayer is set 
+                                                   //this will be the first frame the enemy is visible
+        {
+            GlobalData.AddIntesinty(IntensityValue);
+        }
+        if (!Rend.isVisible && CanSeePlayer)
+        {
+            GlobalData.SubtractIntesinty(IntensityValue);
+        }
         CanSeePlayer = Rend.isVisible;
+        
 
         if( CanSeePlayer )
         {

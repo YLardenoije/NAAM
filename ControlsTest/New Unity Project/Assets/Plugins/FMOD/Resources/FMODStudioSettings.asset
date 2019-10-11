@@ -21,7 +21,7 @@ MonoBehaviour:
   BankLoadType: 0
   AutomaticSampleLoading: 0
   EncryptionKey: 
-  ImportType: 0
+  ImportType: 1
   TargetAssetPath: 
   LoggingLevel: 2
   SpeakerModeSettings:
@@ -75,7 +75,10 @@ MonoBehaviour:
   - Platform: 20
     Value: 32
   Plugins: []
-  MasterBanks: []
-  Banks: []
+  MasterBanks:
+  - Build/Desktop/Master
+  - Desktop/Master
+  Banks:
+  - Desktop/Master.strings
   BanksToLoad: []
   LiveUpdatePort: 9264
