@@ -20,6 +20,23 @@ MonoBehaviour:
   - Name: Desktop
     Value: 838
   Exists: 1
+--- !u!114 &-8099817607115843972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/ThreatLevel
+  m_EditorClassIdentifier: 
+  Name: ThreatLevel
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &-8080934816137081291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,6 +71,48 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 1
+--- !u!114 &-6136911737836611679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: D:/Files/School/S4/Game Design/GIT/NAAM/ControlsTest/New Unity Project/Assets/Audio/Fmod
+    Project/Assignment2/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637063862018059264
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 838
+  Exists: 1
+--- !u!114 &-5750548162281427838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: D:/Files/School/S4/Game Design/GIT/NAAM/ControlsTest/New Unity Project/Assets/Audio/Fmod
+    Project/Assignment2/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637063862018029217
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1836672
+  Exists: 1
 --- !u!114 &-5177538091186097654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,6 +130,31 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &-5014834561255068909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/New Event
+  m_EditorClassIdentifier: 
+  Path: event:/New Event
+  guid: e7820d83f00b164b92b7659c955edb76
+  Banks:
+  - {fileID: -5750548162281427838}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -1431345622239967735}
+  - {fileID: -8099817607115843972}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 112153
 --- !u!114 &-3357547210152785599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,6 +206,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 1
+--- !u!114 &-1431345622239967735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/NearMiss
+  m_EditorClassIdentifier: 
+  Name: NearMiss
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,16 +236,16 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 2722366632271017896}
-  - {fileID: 3426770864616944827}
+  - {fileID: -6136911737836611679}
+  - {fileID: -5750548162281427838}
   EditorEvents:
-  - {fileID: 2405690003410139707}
+  - {fileID: -5014834561255068909}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 3426770864616944827}
+  - {fileID: -5750548162281427838}
   StringsBanks:
-  - {fileID: 2722366632271017896}
-  stringsBankWriteTime: 637057905378340338
+  - {fileID: -6136911737836611679}
+  stringsBankWriteTime: 637063862018059264
   cacheVersion: 3
 --- !u!114 &1249552940515312223
 MonoBehaviour:

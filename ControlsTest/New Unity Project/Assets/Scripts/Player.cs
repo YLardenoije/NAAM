@@ -5,18 +5,15 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-    public UnityEvent OnDeathEvent;
-
     [SerializeField] GlobalData GlobalData;
 
-    private LivingThing livingThing;
+    public LivingThing livingThing;
     // Start is called before the first frame update
     void Start()
     {
-        GlobalData.SetPlayer(this);
         livingThing = gameObject.GetComponent<LivingThing>();
         livingThing.OnDeathEvent.AddListener(OnDeath);
-        OnDeathEvent = new UnityEvent();
+        GlobalData.SetPlayer(this);
     }
 
     // Update is called once per frame
@@ -27,7 +24,6 @@ public class Player : MonoBehaviour
 
     public void OnDeath()
     {
-        OnDeathEvent.Invoke();
         Debug.Log("OnDeathEvent was invoked.");
         Destroy(gameObject);
     }
