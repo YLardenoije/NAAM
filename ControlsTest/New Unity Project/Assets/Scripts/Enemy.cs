@@ -23,6 +23,11 @@ public class Enemy : MonoBehaviour
         Rend = gameObject.GetComponent<Renderer>();
         AttackTimer = 0;
         player = GlobalData.GetPlayerAndAddListener(this);
+        if( player != null )
+        {
+            player.livingThing.OnDeathEvent.AddListener(PlayerDied);
+        }
+        GlobalData.AddEnemy(this);
     }
 
     // Update is called once per frame
@@ -74,5 +79,16 @@ public class Enemy : MonoBehaviour
     public void PlayerChanged()
     {
         player = GlobalData.GetPlayer();
+        player.livingThing.OnDeathEvent.AddListener(PlayerDied);
+    }
+
+    public void OnDestroy()
+    {
+        GlobalData.RemoveEnemy(this);
+    }
+
+    public void PlayerDied()
+    {
+        player = null;
     }
 }

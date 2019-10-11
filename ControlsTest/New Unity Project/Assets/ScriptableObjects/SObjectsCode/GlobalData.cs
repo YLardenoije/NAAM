@@ -9,6 +9,8 @@ public class GlobalData : ScriptableObject
 
     public UnityEvent IntensityChanged = new UnityEvent();
     public UnityEvent PlayerChanged = new UnityEvent();
+    public UnityEvent EnemyCountChanged = new UnityEvent();
+
     
 
     public enum ItemTypes { MovementItem = 0, CombatItem };
@@ -22,6 +24,7 @@ public class GlobalData : ScriptableObject
     public Handedness SelectedHandedness;
 
     private Player player;
+    private List<Enemy> Enemies = new List<Enemy>();
 
     public float Intensity { get;private set; }
 
@@ -76,5 +79,22 @@ public class GlobalData : ScriptableObject
     {
         PlayerChanged.AddListener(Geh.PlayerChanged);
         return player;
+    }
+
+    public void AddEnemy( Enemy enemy )
+    {
+        Enemies.Add(enemy);
+        EnemyCountChanged.Invoke();
+    }
+
+    public void RemoveEnemy( Enemy enemy )
+    {
+        Enemies.Remove(enemy);
+        EnemyCountChanged.Invoke();
+    }
+
+    public int LivingEnemiesCount()
+    {
+        return Enemies.Count;
     }
 }
