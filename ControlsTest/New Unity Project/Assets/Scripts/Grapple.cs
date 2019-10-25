@@ -11,14 +11,14 @@ public class Grapple : MonoBehaviour
     private Vector3 HitLoc;
     [SerializeField] private float GrapplePower; // how strong the grapple pulls.
     private bool HitObjectIsEnemy;
-    private Projectile projectile;
+    [SerializeField] private Projectile projectile;
     private float attachedTime = 0;
     private float maxAttachedTime=1;
 
     void Start()
     {
-        projectile = gameObject.GetComponent<Projectile>();
-        projectile.Target = Target;
+        projectile = GetComponent<Projectile>();
+        projectile.ValuesGotSet.AddListener(UpdateValues);
 
         Attached = false;
         HitObject = null;
@@ -26,7 +26,13 @@ public class Grapple : MonoBehaviour
         
     }
 
-    
+    public void UpdateValues()
+    {
+        Target = projectile.Target;
+        Source = projectile.Source;
+    }
+
+
     void Update()
     {
         if( Attached )

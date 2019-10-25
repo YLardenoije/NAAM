@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private LivingThing livingThing;
     
-    [SerializeField] private FireBall fireBall;
+    [SerializeField] private Projectile projectile;
     [SerializeField] GlobalData GlobalData;
     [SerializeField] private float AttackTimer;
 
@@ -71,9 +71,8 @@ public class Enemy : MonoBehaviour
     {
         if( player != null )
         {
-            FireBall FB = Instantiate(fireBall, transform.position, transform.rotation);
-            FB.Target = player.transform.position;
-            FB.Source = gameObject;
+            Projectile p = Instantiate(projectile, transform.position, transform.rotation);
+            p.SetValues(player.transform.position, gameObject);
         }
     }
 

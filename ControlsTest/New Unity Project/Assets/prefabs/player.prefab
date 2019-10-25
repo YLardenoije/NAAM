@@ -55,13 +55,14 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   GlobalData: {fileID: 11400000, guid: 8e6859b43508577449bcb80fe7ac0759, type: 2}
   MovementSpeed: 50
+  simultaneousTouches: 5
   minDragDistance: 5
   player: {fileID: 3432069549735469574}
-  GrapplePrefab: {fileID: -3469716007093357050, guid: 7259fe73662e5754f89787bc2e7d7def,
+  GrapplePrefab: {fileID: 1880851650191131502, guid: 7259fe73662e5754f89787bc2e7d7def,
+    type: 3}
+  FireBallPrefab: {fileID: 7906331030256008995, guid: efcabe6a37774af488cc1a56bfb26b34,
     type: 3}
   CurrentGrapple: {fileID: 0}
-  FireBallPrefab: {fileID: 7900179182737785616, guid: efcabe6a37774af488cc1a56bfb26b34,
-    type: 3}
 --- !u!114 &3432069549735469574
 MonoBehaviour:
   m_ObjectHideFlags: 0

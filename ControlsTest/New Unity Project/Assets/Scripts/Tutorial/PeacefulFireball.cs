@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireBall : MonoBehaviour
+public class PeacefulFireball : MonoBehaviour
 {
     public Vector2 Target;
     public GameObject Source;
     private Projectile projectile;
+
+    [SerializeField] private Spawner RespawnPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,18 +19,18 @@ public class FireBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("Hit:" + col.gameObject.name);
-        if (col.gameObject != Source )
+        if (col.gameObject != Source)
         {
-            LivingThing livingThing = col.gameObject.GetComponent<LivingThing>();
-            if( livingThing != null )
+            Player player = col.gameObject.GetComponent<Player>();
+            if (player != null)
             {
-                livingThing.Die(); // OOF
+                player.transform.position = RespawnPoint.transform.position;
             }
             Destroy(gameObject);
         }
