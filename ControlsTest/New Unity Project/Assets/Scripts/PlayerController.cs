@@ -4,6 +4,8 @@ using UnityEngine;
 using System;
 using UnityEngine.EventSystems;
 
+// TODO: REFACTOR
+
 [RequireComponent(typeof (Transform))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
@@ -21,7 +23,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]private float minDragDistance = Screen.width/2;
     [SerializeField] private Player player;
-    [SerializeField] private Grapple GrapplePrefab, CurrentGrapple;
+    [SerializeField] private Grapple GrapplePrefab;
+    public Grapple CurrentGrapple;
     [SerializeField] private FireBall FireBallPrefab;
     // Start is called before the first frame update
     void Start()
@@ -30,6 +33,15 @@ public class PlayerController : MonoBehaviour
         lastTouchPositions = new Vector2[simultaneousTouches];
         tf = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
+        if (mainCamera == null )
+        {
+            mainCamera = FindObjectOfType<Camera>();
+        }
+        if( ES == null )
+        {
+            ES = FindObjectOfType<EventSystem>();
+        }
+
     }
     // Update is called once per frame
     void Update()
