@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5152942955768765332}
   - component: {fileID: 3908623949963649927}
   - component: {fileID: 674814547796110868}
+  - component: {fileID: 8847860737541704415}
   m_Layer: 8
   m_Name: player
   m_TagString: Untagged
@@ -54,6 +55,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   GlobalData: {fileID: 11400000, guid: 8e6859b43508577449bcb80fe7ac0759, type: 2}
   MovementSpeed: 50
+  minDragDistance: 5
   player: {fileID: 3432069549735469574}
   GrapplePrefab: {fileID: -3469716007093357050, guid: 7259fe73662e5754f89787bc2e7d7def,
     type: 3}
@@ -72,12 +74,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2426e998523b9564db16b399038f4b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnDeathEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   GlobalData: {fileID: 11400000, guid: 8e6859b43508577449bcb80fe7ac0759, type: 2}
+  livingThing: {fileID: 0}
 --- !u!114 &-6541318514367280733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,8 +192,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/New Event
-  PlayEvent: 0
+  Event: event:/MEh
+  PlayEvent: 1
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -217,3 +215,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ListenerNumber: -1
+--- !u!114 &8847860737541704415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6080549856580446641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55ce530caa128849aa99c31aef8e77c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GD: {fileID: 11400000, guid: 8e6859b43508577449bcb80fe7ac0759, type: 2}

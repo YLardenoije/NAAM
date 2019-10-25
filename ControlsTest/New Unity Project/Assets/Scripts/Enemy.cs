@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+          //TODO: REFACTOR
         if (Rend.isVisible && !CanSeePlayer) //since we do this before CanSeePlayer is set 
                                                    //this will be the first frame the enemy is visible
         {

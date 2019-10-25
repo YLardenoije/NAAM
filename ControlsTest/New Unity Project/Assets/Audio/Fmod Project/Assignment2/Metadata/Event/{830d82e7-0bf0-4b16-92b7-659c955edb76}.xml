@@ -4,6 +4,9 @@
 		<property name="name">
 			<value>New Event</value>
 		</property>
+		<property name="isDefault">
+			<value>true</value>
+		</property>
 		<property name="outputFormat">
 			<value>2</value>
 		</property>
@@ -159,7 +162,6 @@
 			<destination>{827ff3be-656f-4db5-90dd-5204e6d8bbdb}</destination>
 			<destination>{c844099f-dd29-4f62-80ea-292ae31939bb}</destination>
 			<destination>{0e33603b-d553-4c17-aba5-e9a885b070c5}</destination>
-			<destination>{eea83a0a-1c01-465e-94b8-a5bab5570b7d}</destination>
 			<destination>{0b37ee97-7a39-4e9b-88df-c3438f037621}</destination>
 			<destination>{40193623-573f-4422-8bd8-5f78c9325f96}</destination>
 			<destination>{d4009f26-6db8-48b8-ac13-b9b6c6cec074}</destination>
@@ -730,23 +732,6 @@
 			<destination>{c1ee1b23-9e8f-4633-8896-9f7675bac74b}</destination>
 		</relationship>
 	</object>
-	<object class="TransitionMarker" id="{eea83a0a-1c01-465e-94b8-a5bab5570b7d}">
-		<property name="position">
-			<value>40</value>
-		</property>
-		<relationship name="timeline">
-			<destination>{56dab263-bb20-478f-8870-16f2a03351e3}</destination>
-		</relationship>
-		<relationship name="markerTrack">
-			<destination>{d145ee83-5ea1-4ab6-a678-638a852a3c33}</destination>
-		</relationship>
-		<relationship name="destination">
-			<destination>{9bd811f1-1c7b-4c0d-b99f-4c580a881d5d}</destination>
-		</relationship>
-		<relationship name="triggerConditions">
-			<destination>{ff9d3388-fc21-45cb-a923-0e9bbc7e5da9}</destination>
-		</relationship>
-	</object>
 	<object class="TransitionMarker" id="{0b37ee97-7a39-4e9b-88df-c3438f037621}">
 		<property name="position">
 			<value>40</value>
@@ -1018,17 +1003,6 @@
 		</relationship>
 	</object>
 	<object class="ParameterCondition" id="{c1ee1b23-9e8f-4633-8896-9f7675bac74b}">
-		<property name="minimum">
-			<value>75</value>
-		</property>
-		<property name="maximum">
-			<value>100</value>
-		</property>
-		<relationship name="parameter">
-			<destination>{eec69287-596d-4348-b04a-e5c0f402b561}</destination>
-		</relationship>
-	</object>
-	<object class="ParameterCondition" id="{ff9d3388-fc21-45cb-a923-0e9bbc7e5da9}">
 		<property name="minimum">
 			<value>75</value>
 		</property>
