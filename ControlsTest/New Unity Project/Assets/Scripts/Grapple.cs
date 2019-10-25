@@ -12,6 +12,8 @@ public class Grapple : MonoBehaviour
     [SerializeField] private float GrapplePower; // how strong the grapple pulls.
     private bool HitObjectIsEnemy;
     private Projectile projectile;
+    private float attachedTime = 0;
+    private float maxAttachedTime=1;
 
     void Start()
     {
@@ -29,6 +31,7 @@ public class Grapple : MonoBehaviour
     {
         if( Attached )
         {
+            attachedTime += Time.deltaTime;
             if( HitObjectIsEnemy && HitObject != null )
             {
                 
@@ -46,6 +49,14 @@ public class Grapple : MonoBehaviour
                     (transform.position - Source.gameObject.transform.position).normalized * GrapplePower, ForceMode2D.Impulse);
                 transform.position = HitLoc;
             }
+            if (attachedTime > 1)
+            {
+                Destroy(gameObject);
+            }
+        }
+        else if (attachedTime!=0)
+        {
+            attachedTime = 0;
         }
     }
 
