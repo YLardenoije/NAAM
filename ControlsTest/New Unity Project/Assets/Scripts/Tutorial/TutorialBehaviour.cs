@@ -7,6 +7,7 @@ public class TutorialBehaviour : MonoBehaviour
     [SerializeField] private Spawner TutorialStartPoint;
     [SerializeField] private Player PlayerPrefab;
     [SerializeField] private int TutorialProgress;
+    [SerializeField] private Cinemachine.CinemachineVirtualCamera Cam;
 
     private Player player;
     private List<Goal> Goals;  
@@ -17,16 +18,30 @@ public class TutorialBehaviour : MonoBehaviour
         player = Instantiate(PlayerPrefab, TutorialStartPoint.transform.position, PlayerPrefab.transform.rotation);
         Goals = new List<Goal>();
         TutorialProgress = 0;
+        Cam.Follow = player.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch( TutorialProgress )
+        switch( TutorialProgress ) //If a tut step needs special action to be taken, add it in this switch case.
         {
             case 0:
                 Goals.AddRange( FindObjectsOfType<Goal>() );
+                foreach( Goal g in Goals )
+                {
+                    g.GoalReached.AddListener(OnTutProgress);
+                }
+                TutorialProgress++;
+                break;
+            case 3:
+                Cam.m_Lens.OrthographicSize = 7;
                 break;
         }
+    }
+
+    void OnTutProgress()
+    {
+        TutorialProgress++;
     }
 }
