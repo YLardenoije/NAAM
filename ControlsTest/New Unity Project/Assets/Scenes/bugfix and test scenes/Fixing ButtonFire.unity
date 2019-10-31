@@ -200,17 +200,17 @@ PrefabInstance:
     - target: {fileID: 3908623949963649927, guid: f612c8a2b538c1d4f91d86a34e9333f9,
         type: 3}
       propertyPath: OverrideMinDistance
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3908623949963649927, guid: f612c8a2b538c1d4f91d86a34e9333f9,
         type: 3}
       propertyPath: OverrideMaxDistance
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3908623949963649927, guid: f612c8a2b538c1d4f91d86a34e9333f9,
         type: 3}
       propertyPath: Event
-      value: event:/New Event
+      value: event:/BackGroundMusic
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f612c8a2b538c1d4f91d86a34e9333f9, type: 3}
@@ -9466,7 +9466,7 @@ PrefabInstance:
     - target: {fileID: 8852927986741042359, guid: becd123d07208b549a1aca46d4420154,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.081004
+      value: -0.08093262
       objectReference: {fileID: 0}
     - target: {fileID: 8852927986741042359, guid: becd123d07208b549a1aca46d4420154,
         type: 3}

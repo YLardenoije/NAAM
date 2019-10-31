@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{ebb72b4f-3a5f-432f-a04c-47edba3cde19}">
+		<property name="assetPath">
+			<value>StdDrumsReasonableReverb.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>16</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{337cc02d-f340-4396-b8d6-96a24d15af09}</destination>
+		</relationship>
+	</object>
+</objects>

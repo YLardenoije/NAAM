@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   SwitchSettingsMigration: 1
-  HasSourceProject: 0
+  HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: Assets/Audio/Fmod Project/Assignment2/Assignment2.fspro
-  SourceBankPathUnformatted: Assets/Audio/Fmod Project/Assignment2/Build
+  sourceProjectPath: Assets/Audio/FmodProject/RealProject/NAAM/NAAM.fspro
+  SourceBankPathUnformatted: Assets/Audio/FmodProject/RealProject/NAAM/Build
   AutomaticEventLoading: 1
   BankLoadType: 0
   AutomaticSampleLoading: 0

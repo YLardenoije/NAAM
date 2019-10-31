@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001E4F9373BF8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000187B90FA1F8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -15,13 +15,113 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
-[LOG] Manager::readBank                        : fileversion = 121, compatVersion = 119 (oldest = 44, newest = 121)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1605920
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 6176
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000003EBAD1F3BC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC459C7050
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC459C7020
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC459C7120
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC459C71E0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000187D035BAB8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='MediumDrums120', format=2, channels=2, frequency=48000, lengthbytes=110880, lengthpcm=384000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.706335.
+[LOG] SystemI::createSound                     : filename = D:/school/S4/GD/NAAM/ControlsTest/New Unity Project/Assets/Audio/FmodProject/RealProject/NAAM/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Priority: 1, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] SystemI::createSound                     : setdata soundi = 00000187B9BFA5A8 : node = 00000187BD5DB9D0
+[LOG] SystemI::createSound                     : add node to async list : head = 00000187BF976C18.  list count = 0
+[LOG] SystemI::createSound                     : filename = D:/school/S4/GD/NAAM/ControlsTest/New Unity Project/Assets/Audio/FmodProject/RealProject/NAAM/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000187B9BFA5A8
+[LOG] SystemI::createSound                     : setdata soundi = 00000187B7A19A88 : node = 00000187BD499C90
+[LOG] SystemI::createSound                     :     add node to async list : head = 00000187BF976C18.  list count = 0
+[LOG] SystemI::createSoundInternal             :     Create name='D:/school/S4/GD/NAAM/ControlsTest/New Unity Project/Assets/Audio/FmodProject/RealProject/NAAM/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1605920
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 6176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000187BD5DBAE0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='BuildUpReasonableReverb', format=2, channels=2, frequency=48000, lengthbytes=199808, lengthpcm=768000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.890899.
+[LOG] Thread::initThread                       :     Init FMOD file thread. Priority: 1, Stack Size: 49152, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000187B9BFA5A8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000187B7A19A88
+[LOG] SystemI::createSoundInternal             :     Create name='D:/school/S4/GD/NAAM/ControlsTest/New Unity Project/Assets/Audio/FmodProject/RealProject/NAAM/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1605920
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 6176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000187BD499DA0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='TheMissionMusic_Synths', format=2, channels=2, frequency=48000, lengthbytes=1294048, lengthpcm=4608000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.262970.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000187B7A19A88
+[LOG] SoundI::getSubSound                      : sound 00000187B9BFA5A8.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 00000187B7A19A88.  Subsound index 0 / 1
+[LOG] SystemI::createSound                     : filename = D:/school/S4/GD/NAAM/ControlsTest/New Unity Project/Assets/Audio/FmodProject/RealProject/NAAM/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001879BE48558 : node = 00000187BD5DB110
+[LOG] SystemI::createSound                     : add node to async list : head = 00000187BF976C18.  list count = 0
+[LOG] SystemI::createSound                     : filename = D:/school/S4/GD/NAAM/ControlsTest/New Unity Project/Assets/Audio/FmodProject/RealProject/NAAM/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000187D0558558 : node = 00000187CFB9D590
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001879BE48558
+[LOG] SystemI::createSound                     : add node to async list : head = 00000187BF976C18.  list count = 0
+[LOG] SystemI::createSoundInternal             :     Create name='D:/school/S4/GD/NAAM/ControlsTest/New Unity Project/Assets/Audio/FmodProject/RealProject/NAAM/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1605920
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 6176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000187BD5DB220
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='BuildUpReasonableReverb', format=2, channels=2, frequency=48000, lengthbytes=199808, lengthpcm=768000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.890899.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001879BE48558
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000187D0558558
+[LOG] SystemI::createSoundInternal             :     Create name='D:/school/S4/GD/NAAM/ControlsTest/New Unity Project/Assets/Audio/FmodProject/RealProject/NAAM/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1605920
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 6176
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000187CFB9D6A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='TheMissionMusic_Synths', format=2, channels=2, frequency=48000, lengthbytes=1294048, lengthpcm=4608000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.262970.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000187D0558558
+[LOG] SoundI::getSubSound                      : sound 000001879BE48558.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 00000187D0558558.  Subsound index 0 / 1
+[LOG] SoundI::release                          : TheMissionMusic_Synths (00000187B7A19A88)
+[LOG] SoundI::release                          :     TheMissionMusic_Synths (00000187BF973EE8)
+[LOG] SoundI::release                          :     TheMissionMusic_Synths (00000187C1B4FD88)
+[LOG] SoundI::release                          : BuildUpReasonableReverb (00000187B9BFA5A8)
+[LOG] SoundI::release                          :     BuildUpReasonableReverb (00000187BF976E08)
+[LOG] SoundI::release                          :     BuildUpReasonableReverb (00000187B7A19DE8)
+[LOG] SoundI::release                          :  (00000187B90F4988)
+[LOG] SoundI::release                          :     MediumDrums120 (00000187BF973388)
+[LOG] SoundI::release                          : TheMissionMusic_Synths (00000187D0558558)
+[LOG] SoundI::release                          :     TheMissionMusic_Synths (00000187C065B178)
+[LOG] SoundI::release                          :     TheMissionMusic_Synths (00000187D0559638)
+[LOG] SoundI::release                          : BuildUpReasonableReverb (000001879BE48558)
+[LOG] SoundI::release                          :     BuildUpReasonableReverb (00000187BF974088)
+[LOG] SoundI::release                          :     BuildUpReasonableReverb (00000187D05588B8)
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
 [LOG] SystemI::close                           : Closed.

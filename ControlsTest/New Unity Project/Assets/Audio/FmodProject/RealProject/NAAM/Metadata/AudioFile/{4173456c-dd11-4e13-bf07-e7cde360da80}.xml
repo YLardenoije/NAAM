@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{4173456c-dd11-4e13-bf07-e7cde360da80}">
+		<property name="assetPath">
+			<value>TheMissionMusic_PercussionAccent_01.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>10</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{337cc02d-f340-4396-b8d6-96a24d15af09}</destination>
+		</relationship>
+	</object>
+</objects>
