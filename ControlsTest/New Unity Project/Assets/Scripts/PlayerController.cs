@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] EventSystem ES;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GlobalData GlobalData;
+    [SerializeField] private Animator animator;
     private Transform tf;
     private Rigidbody2D rb;
     public float MovementSpeed = 10;
@@ -45,7 +46,21 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.AddForce(new Vector2(Input.acceleration.x*MovementSpeed, 0)); //tilting should be working like this? // i guess it does C:
+        float tilt = Input.acceleration.x * MovementSpeed;
+        if (tilt > 0.8)
+        {
+            animator.SetInteger("Dir", 1);
+        }
+        else if (tilt < -0.8)
+        {
+            animator.SetInteger("Dir", -1);
+        }
+        else
+        {
+            animator.SetInteger("Dir", 0); 
+
+        }
+        rb.AddForce(new Vector2(tilt, 0)); //tilting should be working like this? // i guess it does C:
         HandleTouches();
     }
     void Fire( Vector2 _EndPoint, bool IsCombatItem)
