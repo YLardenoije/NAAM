@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Testing Shooting.unity
     guid: df4f8093510d0f84a9f353fd727f21e1
   - enabled: 1
+    path: Assets/Scenes/TutorialScene.unity
+    guid: 59b2165c6e6d14e4598be2bee4e3401d
+  - enabled: 0
     path: Assets/Scenes/bugfix and test scenes/Fixing ButtonFire.unity
     guid: 6afbc4f586e43af419dfe4076b854fbb
   m_configObjects: {}

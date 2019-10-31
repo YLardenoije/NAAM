@@ -87,6 +87,10 @@ public class Grapple : MonoBehaviour
             {
                 HitObjectIsEnemy = true;
             }
+            if( HitObject.GetComponent<Border>() )
+            {
+                Destroy(this);
+            }
             BoxCollider2D tmp = GetComponent<BoxCollider2D>();
             tmp.enabled = false;
         }
