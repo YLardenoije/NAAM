@@ -65,12 +65,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   livingThing: {fileID: 0}
-  fireBall: {fileID: 7900179182737785616, guid: 6a1af519959e7684ba60e4529dd21ad8,
+  projectile: {fileID: 7906331030256008995, guid: 6a1af519959e7684ba60e4529dd21ad8,
     type: 3}
   GlobalData: {fileID: 11400000, guid: 8e6859b43508577449bcb80fe7ac0759, type: 2}
   AttackTimer: 0
   CanSeePlayer: 0
   AttackChargeTimeInSeconds: 1
+  IntensityValue: 30
 --- !u!212 &2796322109357033593
 SpriteRenderer:
   m_ObjectHideFlags: 0

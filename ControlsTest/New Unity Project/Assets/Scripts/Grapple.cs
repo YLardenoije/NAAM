@@ -11,22 +11,33 @@ public class Grapple : MonoBehaviour
     private Vector3 HitLoc;
     [SerializeField] private float GrapplePower; // how strong the grapple pulls.
     private bool HitObjectIsEnemy;
-    private Projectile projectile;
+    [SerializeField] private Projectile projectile;
     private float attachedTime = 0;
-    private float maxAttachedTime=1;
+    [SerializeField] private float maxAttachedTime=1;
+    [SerializeField] private float MinimalHoldDistance = 1;
 
-    void Start()
+
+    private void Awake()
     {
-        projectile = gameObject.GetComponent<Projectile>();
-        projectile.Target = Target;
-
         Attached = false;
         HitObject = null;
         HitObjectIsEnemy = false;
-        
     }
 
-    
+    void Start()
+    {
+        projectile = GetComponent<Projectile>();
+        projectile.ValuesGotSet.AddListener(UpdateValues);
+    }
+        
+    public void UpdateValues()
+    {
+        Target = projectile.Target;
+        Source = projectile.Source;
+        Debug.Log("Source is: " + Source);  
+    }
+
+
     void Update()
     {
         if( Attached )
@@ -50,6 +61,10 @@ public class Grapple : MonoBehaviour
                 transform.position = HitLoc;
             }
             if (attachedTime > 1)
+            {
+                Destroy(gameObject);
+            }
+            if ((transform.position - Source.transform.position).magnitude < MinimalHoldDistance)
             {
                 Destroy(gameObject);
             }

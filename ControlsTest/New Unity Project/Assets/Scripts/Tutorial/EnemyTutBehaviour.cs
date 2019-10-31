@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyTutBehaviour : MonoBehaviour
 {
     [SerializeField] private LivingThing livingThing;
-    
     [SerializeField] private Projectile projectile;
     [SerializeField] GlobalData GlobalData;
     [SerializeField] private float AttackTimer;
+    [SerializeField] Spawner RespawnPoint;
 
     public bool CanSeePlayer;
     public float AttackChargeTimeInSeconds;
@@ -19,23 +19,22 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         livingThing = gameObject.GetComponent<LivingThing>();
-        livingThing.OnDeathEvent.AddListener( OnDeath );
+        livingThing.OnDeathEvent.AddListener(OnDeath);
         Rend = gameObject.GetComponent<Renderer>();
         AttackTimer = 0;
         player = GlobalData.GetPlayerAndAddListener(this);
-        if( player != null )
+        if (player != null)
         {
             player.livingThing.OnDeathEvent.AddListener(PlayerDied);
         }
-        GlobalData.AddEnemy(this);
     }
 
     // Update is called once per frame
     void Update()
     {
-          //TODO: REFACTOR
+        //TODO: REFACTOR
         if (Rend.isVisible && !CanSeePlayer) //since we do this before CanSeePlayer is set 
-                                                   //this will be the first frame the enemy is visible
+                                             //this will be the first frame the enemy is visible
         {
             GlobalData.AddIntesinty(IntensityValue);
         }
@@ -44,12 +43,11 @@ public class Enemy : MonoBehaviour
             GlobalData.SubtractIntesinty(IntensityValue);
         }
         CanSeePlayer = Rend.isVisible;
-        
 
-        if( CanSeePlayer )
+        if (CanSeePlayer)
         {
             AttackTimer += Time.deltaTime;
-            if( AttackTimer >= AttackChargeTimeInSeconds )
+            if (AttackTimer >= AttackChargeTimeInSeconds)
             {
                 AttackPlayer();
                 AttackTimer = 0;
@@ -64,15 +62,17 @@ public class Enemy : MonoBehaviour
     public void OnDeath()
     {
         //gameObject.SetActive(false); FOR OBJ POOL
-        Destroy(gameObject); 
+        Destroy(gameObject);
     }
 
     private void AttackPlayer()
     {
-        if( player != null )
+        if (player != null && projectile != null )
         {
             Projectile p = Instantiate(projectile, transform.position, transform.rotation);
             p.SetValues(player.transform.position, gameObject);
+            PeacefulFireball pf = p.GetComponent<PeacefulFireball>();
+            pf.RespawnPoint = this.RespawnPoint;
         }
     }
 
@@ -80,11 +80,6 @@ public class Enemy : MonoBehaviour
     {
         player = GlobalData.GetPlayer();
         player.livingThing.OnDeathEvent.AddListener(PlayerDied);
-    }
-
-    public void OnDestroy()
-    {
-        GlobalData.RemoveEnemy(this);
     }
 
     public void PlayerDied()

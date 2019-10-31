@@ -23,9 +23,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]private float minDragDistance = Screen.width/2;
     [SerializeField] private Player player;
-    [SerializeField] private Grapple GrapplePrefab;
-    public Grapple CurrentGrapple;
-    [SerializeField] private FireBall FireBallPrefab;
+    [SerializeField] private Projectile GrapplePrefab, FireBallPrefab;
+    public Projectile CurrentGrapple;
     // Start is called before the first frame update
     void Start()
     {
@@ -113,8 +112,7 @@ public class PlayerController : MonoBehaviour
                 if (CurrentGrapple == null)
                 {
                     CurrentGrapple = Instantiate(GrapplePrefab, transform.position, transform.rotation);
-                    CurrentGrapple.Target = endpoint;
-                    CurrentGrapple.Source = player.gameObject;
+                    CurrentGrapple.SetValues(endpoint, player.gameObject);
                 }
                
                 break;
@@ -126,9 +124,8 @@ public class PlayerController : MonoBehaviour
         switch (GlobalData.SelectedCombatItem)
         {
             case GlobalData.CombatItems.FireBall:
-                FireBall FB = Instantiate(FireBallPrefab, transform.position, transform.rotation);
-                FB.Target = endpoint;
-                FB.Source = player.gameObject;
+                Projectile FB = Instantiate(FireBallPrefab, transform.position, transform.rotation);
+                FB.SetValues(endpoint, player.gameObject);
                 break;
         }
     }
