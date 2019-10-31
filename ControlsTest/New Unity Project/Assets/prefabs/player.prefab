@@ -54,7 +54,6 @@ MonoBehaviour:
   GlobalData: {fileID: 11400000, guid: 8e6859b43508577449bcb80fe7ac0759, type: 2}
   MovementSpeed: 50
   simultaneousTouches: 5
-  minDragDistance: 5
   player: {fileID: 3432069549735469574}
   GrapplePrefab: {fileID: 1880851650191131502, guid: 7259fe73662e5754f89787bc2e7d7def,
     type: 3}
@@ -191,7 +190,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 6895aec43d6852e46bd81bedb460bb45, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
