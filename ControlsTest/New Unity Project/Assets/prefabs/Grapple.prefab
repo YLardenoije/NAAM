@@ -51,6 +51,9 @@ MonoBehaviour:
   Target: {x: 0, y: 0}
   HitObject: {fileID: 0}
   GrapplePower: 1
+  projectile: {fileID: 0}
+  maxAttachedTime: 1
+  MinimalHoldDistance: 2
 --- !u!114 &1880851650191131502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,8 +67,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {x: 0, y: 0}
+  Source: {fileID: 0}
   Origin: {x: 0, y: 0}
   Speed: 30
+  ValuesGotSet:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!212 &3177782376467712278
 SpriteRenderer:
   m_ObjectHideFlags: 0

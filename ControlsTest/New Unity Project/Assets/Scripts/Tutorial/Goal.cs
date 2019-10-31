@@ -31,6 +31,12 @@ public class Goal : MonoBehaviour
                 Destroy(player.GetComponent<PlayerController>().CurrentGrapple);
                 player.transform.position = NextSpawn.transform.position;
                 player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+                Projectile g = player.GetComponent<PlayerController>().CurrentGrapple;
+                if( g != null )
+                {
+                    Destroy(g);
+                }
                 GoalReached.Invoke();
             }
         }

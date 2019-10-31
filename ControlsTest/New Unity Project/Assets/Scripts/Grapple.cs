@@ -14,6 +14,7 @@ public class Grapple : MonoBehaviour
     [SerializeField] private Projectile projectile;
     private float attachedTime = 0;
     [SerializeField] private float maxAttachedTime=1;
+    [SerializeField] private float MinimalHoldDistance = 1;
 
 
     private void Awake()
@@ -60,6 +61,10 @@ public class Grapple : MonoBehaviour
                 transform.position = HitLoc;
             }
             if (attachedTime > 1)
+            {
+                Destroy(gameObject);
+            }
+            if ((transform.position - Source.transform.position).magnitude < MinimalHoldDistance)
             {
                 Destroy(gameObject);
             }
