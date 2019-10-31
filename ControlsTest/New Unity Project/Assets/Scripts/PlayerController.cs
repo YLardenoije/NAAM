@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private Vector2[] FirstTouchPositions, lastTouchPositions;
     [SerializeField] int simultaneousTouches = 5;
 
-    [SerializeField]private float minDragDistance = Screen.width/2;
+    private float minDragDistance = Screen.width*0.1f;
     [SerializeField] private Player player;
     [SerializeField] private Projectile GrapplePrefab, FireBallPrefab;
     public Projectile CurrentGrapple;
