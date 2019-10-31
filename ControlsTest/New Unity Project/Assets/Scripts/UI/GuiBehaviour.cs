@@ -8,10 +8,14 @@ public class GuiBehaviour : MonoBehaviour
 {
     [SerializeField] private GlobalData GlobalData;
     [SerializeField] private TMPro.TextMeshProUGUI HandedNessText;
+    [SerializeField] private TMPro.TextMeshProUGUI LevelNameText;
+    [SerializeField] private Button SceneNameClickable;
+    [SerializeField] private List<string> SceneNames;
+    private int SelectedScene;
 
     public void OnPlayButtonClicked()
     {
-        SceneManager.LoadScene(1); //load the first scene after this one ( in build order )
+        SceneManager.LoadScene(SceneNames[SelectedScene]);
     }
 
     public void OnQuitButtonPressed()
@@ -69,5 +73,27 @@ public class GuiBehaviour : MonoBehaviour
             GlobalData.SelectedMovementItem = GlobalData.MovementItems.Grapple;
             HandedNessText.text = "Grapple";
         }
+    }
+
+    public void OnLevelSelectNextButtonClicked()
+    {
+        SelectedScene++;
+        SelectedScene %= SceneNames.Count;
+        UpdateSelectedScene();
+    }
+
+    public void OnLevelSelectPrevButtonClicked()
+    {
+        SelectedScene--;
+        if( SelectedScene < 0 )
+        {
+            SelectedScene += SceneNames.Count;
+        }
+        UpdateSelectedScene();
+    }
+
+    private void UpdateSelectedScene()
+    {
+        LevelNameText.text = SceneNames[SelectedScene];
     }
 }
