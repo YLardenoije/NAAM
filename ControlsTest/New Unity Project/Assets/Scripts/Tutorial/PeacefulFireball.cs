@@ -6,9 +6,10 @@ public class PeacefulFireball : MonoBehaviour
 {
     public Vector2 Target;
     public GameObject Source;
+    public Spawner RespawnPoint;
+
     private Projectile projectile;
 
-    [SerializeField] private Spawner RespawnPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,7 @@ public class PeacefulFireball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("Hit:" + col.gameObject.name);
+        Debug.Log("Hit:" + col.gameObject.name + ((col.gameObject != Source)?"":" which is source.") );
         if (col.gameObject != Source)
         {
             Player player = col.gameObject.GetComponent<Player>();
@@ -40,5 +41,6 @@ public class PeacefulFireball : MonoBehaviour
     {
         Target = projectile.Target;
         Source = projectile.Source;
+        Debug.Log("Values were updated! Source is: " + Source.name);
     }
 }

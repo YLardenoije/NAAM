@@ -13,23 +13,27 @@ public class Grapple : MonoBehaviour
     private bool HitObjectIsEnemy;
     [SerializeField] private Projectile projectile;
     private float attachedTime = 0;
-    private float maxAttachedTime=1;
+    [SerializeField] private float maxAttachedTime=1;
+
+
+    private void Awake()
+    {
+        Attached = false;
+        HitObject = null;
+        HitObjectIsEnemy = false;
+    }
 
     void Start()
     {
         projectile = GetComponent<Projectile>();
         projectile.ValuesGotSet.AddListener(UpdateValues);
-
-        Attached = false;
-        HitObject = null;
-        HitObjectIsEnemy = false;
-        
     }
-
+        
     public void UpdateValues()
     {
         Target = projectile.Target;
         Source = projectile.Source;
+        Debug.Log("Source is: " + Source);  
     }
 
 

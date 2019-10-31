@@ -15,13 +15,24 @@ public class Projectile : MonoBehaviour
     private int magicNumber = 100; //this makes sure the projectile keeps flying forever, until it hits.
     public UnityEvent ValuesGotSet = new UnityEvent();
 
+
+    private void Awake()
+    {
+        
+    }
+
     void Start()
     {
+        if( Source != null && Target != null )
+        {
+            ValuesGotSet.Invoke();
+            Debug.Log("Projectile values were set and passed to subbed functions. ");
+        }
         HasHitSomething = false;
 
         int layermask = 1 << gameObject.layer;
         layermask = ~layermask;
-        
+
 
         hit = Physics2D.Raycast(transform.position,
             Target - new Vector2(transform.position.x, transform.position.y),
@@ -31,6 +42,7 @@ public class Projectile : MonoBehaviour
     
     void Update()
     {
+
         if (!HasHitSomething)
         {
             transform.Translate(

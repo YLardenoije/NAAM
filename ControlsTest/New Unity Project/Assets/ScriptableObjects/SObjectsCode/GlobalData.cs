@@ -75,6 +75,12 @@ public class GlobalData : ScriptableObject
         return player;
     }
 
+    public Player GetPlayerAndAddListener( EnemyTutBehaviour enemy )
+    {
+        PlayerChanged.AddListener(enemy.PlayerChanged);
+        return player;
+    }
+
     public Player GetPlayerAndAddListener(GameEventHandler Geh)
     {
         PlayerChanged.AddListener(Geh.PlayerChanged);
