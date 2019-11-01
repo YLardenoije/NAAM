@@ -13,18 +13,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField] EventSystem ES;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GlobalData GlobalData;
-    private Transform tf;
-    private Rigidbody2D rb;
+    [SerializeField] int simultaneousTouches = 5;
+    [SerializeField] private Player player;
+    [SerializeField] private float minDragDistance = Screen.width * 0.1f;
+
     public float MovementSpeed = 10;
+    public Projectile GrapplePrefab, FireBallPrefab;
+    public Projectile CurrentGrapple;
+
+    private Transform tf;
+    private Rigidbody2D rb;    
     private bool Grappling = false;
     private Vector2 grapplepoint;
     private Vector2[] FirstTouchPositions, lastTouchPositions;
-    [SerializeField] int simultaneousTouches = 5;
-
-    private float minDragDistance = Screen.width*0.1f;
-    [SerializeField] private Player player;
-    [SerializeField] private Projectile GrapplePrefab, FireBallPrefab;
-    public Projectile CurrentGrapple;
+    
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -54,18 +58,23 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(CurrentGrapple.gameObject);
             CurrentGrapple = null;
-  
         }
         if (IsCombatItem)
         {
-            FireProjectile(_EndPoint);
+            if (FireBallPrefab != null )
+            {
+                FireProjectile(_EndPoint);
+            }
         }
         else
         {
-            FireGrapple(_EndPoint);
+            if( GrapplePrefab != null )
+            {
+                FireGrapple(_EndPoint);
+            }
         }         
     }
-    void HandleTouches()
+    void HandleTouches() //huehuehue
     {
         int i = 0;
         foreach (Touch t in Input.touches)
