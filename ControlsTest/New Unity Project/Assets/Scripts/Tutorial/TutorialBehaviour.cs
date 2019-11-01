@@ -38,22 +38,22 @@ public class TutorialBehaviour : MonoBehaviour
                 TutorialProgress++;
                 GrapplePrefab = pc.GrapplePrefab;
                 FireballPrefab = pc.FireBallPrefab;
-                pc.GrapplePrefab = null;
-                pc.FireBallPrefab = null;
+                pc.GrapplePrefab = null; //remove the grapple from the player, so that he cant use it for now.
+                pc.FireBallPrefab = null; //remove the fireball as well.
                 break;
             case 1:
                 Cam.m_Lens.OrthographicSize = 4;
                 break;
             case 2:
                 Cam.m_Lens.OrthographicSize = 4;
-                pc.GrapplePrefab = GrapplePrefab;
+                pc.GrapplePrefab = GrapplePrefab; //give back the grapple, since the player needs from part 2 and further.
                 break;
             case 3:
                 Cam.m_Lens.OrthographicSize = 7;
                 break;
             case 4:
                 Cam.m_Lens.OrthographicSize = 4;
-                pc.FireBallPrefab = FireballPrefab;
+                pc.FireBallPrefab = FireballPrefab; //give back the fireball as well.
                 break;
             case 5:
                 Cam.m_Lens.OrthographicSize = 4;
