@@ -43,10 +43,10 @@ public class TutorialBehaviour : MonoBehaviour
                 break;
             case 1:
                 Cam.m_Lens.OrthographicSize = 4;
-                pc.GrapplePrefab = GrapplePrefab;
                 break;
             case 2:
                 Cam.m_Lens.OrthographicSize = 4;
+                pc.GrapplePrefab = GrapplePrefab;
                 break;
             case 3:
                 Cam.m_Lens.OrthographicSize = 7;
