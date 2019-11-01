@@ -92,7 +92,7 @@ public class GuiBehaviour : MonoBehaviour
         UpdateSelectedScene();
     }
 
-    private void UpdateSelectedScene()
+    public void UpdateSelectedScene()
     {
         LevelNameText.text = SceneNames[SelectedScene];
     }
