@@ -1703,6 +1703,8 @@ MonoBehaviour:
   GlobalData: {fileID: 11400000, guid: 8e6859b43508577449bcb80fe7ac0759, type: 2}
   HandedNessText: {fileID: 566026186}
   LevelNameText: {fileID: 1741594594}
+  WeaponNameText: {fileID: 1096602782}
+  MovementNameText: {fileID: 742639120}
   SceneNameClickable: {fileID: 1471339804}
   SceneNames:
   - TutorialScene
@@ -2980,7 +2982,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1272305838}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 893815510}
+        m_MethodName: OnWeaponButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1272305838

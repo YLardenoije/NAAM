@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 9079744925659971782}
   - component: {fileID: 9079744925659971784}
   - component: {fileID: 6300034753804140423}
-  m_Layer: 8
-  m_Name: BlastWave
+  m_Layer: 10
+  m_Name: EnemyBlastWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

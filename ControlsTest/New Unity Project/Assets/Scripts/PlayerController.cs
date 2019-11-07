@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float minDragDistance = Screen.width * 0.1f;
 
     public float MovementSpeed = 10;
-    public Projectile GrapplePrefab, FireBallPrefab;
+    public Projectile GrapplePrefab, FireBallPrefab, BlastWavePrefab;
     public Projectile CurrentGrapple;
 
     private Transform tf;
@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     private bool Grappling = false;
     private Vector2 grapplepoint;
     private Vector2[] FirstTouchPositions, lastTouchPositions;
+    private float AttackCooldown;
+    private float TimeSinceLastAttack = 0;
     
     
     
@@ -45,11 +47,21 @@ public class PlayerController : MonoBehaviour
             ES = FindObjectOfType<EventSystem>();
         }
 
+        if( GlobalData.SelectedCombatItem == GlobalData.CombatItems.BlastWave )
+        {
+            AttackCooldown = 1.5f;
+        }
+        else if( GlobalData.SelectedCombatItem == GlobalData.CombatItems.FireBall )
+        {
+            AttackCooldown = 0.4f;
+        }
+
     }
     // Update is called once per frame
     void Update()
     {
         rb.AddForce(new Vector2(Input.acceleration.x*MovementSpeed, 0)); //tilting should be working like this? // i guess it does C:
+        TimeSinceLastAttack += Time.deltaTime;
         HandleTouches();
     }
     void Fire( Vector2 _EndPoint, bool IsCombatItem)
@@ -61,10 +73,7 @@ public class PlayerController : MonoBehaviour
         }
         if (IsCombatItem)
         {
-            if (FireBallPrefab != null )
-            {
-                FireProjectile(_EndPoint);
-            }
+            FireProjectile(_EndPoint);
         }
         else
         {
@@ -106,7 +115,12 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    Fire(Endpoint, IsCombatItem: true );
+                    if( TimeSinceLastAttack > AttackCooldown )
+                    {
+                        Fire(Endpoint, IsCombatItem: true );
+                        TimeSinceLastAttack = 0;
+                    }
+                   
                 }
             }
                 i++;
@@ -133,8 +147,18 @@ public class PlayerController : MonoBehaviour
         switch (GlobalData.SelectedCombatItem)
         {
             case GlobalData.CombatItems.FireBall:
-                Projectile FB = Instantiate(FireBallPrefab, transform.position, transform.rotation);
-                FB.SetValues(endpoint, player.gameObject);
+                if (FireBallPrefab != null )
+                {
+                    Projectile FB = Instantiate(FireBallPrefab, transform.position, transform.rotation);
+                    FB.SetValues(endpoint, player.gameObject);
+                }
+                break;
+            case GlobalData.CombatItems.BlastWave:
+                if (BlastWavePrefab != null )
+                {
+                    Projectile BW = Instantiate(BlastWavePrefab, transform.position, transform.rotation);
+                    BW.SetValues(endpoint, player.gameObject);
+                }
                 break;
         }
     }

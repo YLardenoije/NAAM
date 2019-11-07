@@ -9,6 +9,8 @@ public class GuiBehaviour : MonoBehaviour
     [SerializeField] private GlobalData GlobalData;
     [SerializeField] private TMPro.TextMeshProUGUI HandedNessText;
     [SerializeField] private TMPro.TextMeshProUGUI LevelNameText;
+    [SerializeField] private TMPro.TextMeshProUGUI WeaponNameText;
+    [SerializeField] private TMPro.TextMeshProUGUI MovementNameText;
     [SerializeField] private Button SceneNameClickable;
     [SerializeField] private List<string> SceneNames;
     private int SelectedScene;
@@ -39,11 +41,20 @@ public class GuiBehaviour : MonoBehaviour
     {
         if (GlobalData.SelectedMovementItem == GlobalData.MovementItems.Grapple)
         {
-            HandedNessText.text = "Grapple";
+            MovementNameText.text = "Grapple";
         }
         else
         {
-            HandedNessText.text = "Jetpack";
+            MovementNameText.text = "Jetpack";
+        }
+
+        if( GlobalData.SelectedCombatItem == GlobalData.CombatItems.FireBall )
+        {
+            WeaponNameText.text = "Fireball";
+        }
+        else
+        {
+            WeaponNameText.text = "Blastwave";
         }
     }
 
@@ -65,13 +76,28 @@ public class GuiBehaviour : MonoBehaviour
     {
         if (GlobalData.SelectedMovementItem == GlobalData.MovementItems.Grapple)
         {
-            GlobalData.SelectedMovementItem = GlobalData.MovementItems.JetPack;
-            HandedNessText.text = "Jetpack";
+            //GlobalData.SelectedMovementItem = GlobalData.MovementItems.JetPack;
+            //MovementNameText.text = "Jetpack";
+            Debug.Log("Disabled movement swapping for now, until we have a 2nd move item.");
         }
         else
         {
             GlobalData.SelectedMovementItem = GlobalData.MovementItems.Grapple;
-            HandedNessText.text = "Grapple";
+            MovementNameText.text = "Grapple";
+        }
+    }
+
+    public void OnWeaponButtonClicked()
+    {
+        if( GlobalData.SelectedCombatItem == GlobalData.CombatItems.FireBall )
+        {
+            GlobalData.SelectedCombatItem = GlobalData.CombatItems.BlastWave;
+            WeaponNameText.text = "Blastwave";
+        }
+        else
+        {
+            GlobalData.SelectedCombatItem = GlobalData.CombatItems.FireBall;
+            WeaponNameText.text = "Fireball";
         }
     }
 
