@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4773922455064962934}
   - component: {fileID: 6704503235161257230}
   - component: {fileID: 6824684951167936954}
+  - component: {fileID: -7769859230710215607}
   m_Layer: 10
   m_Name: EnemyFireBall
   m_TagString: Untagged
@@ -62,7 +63,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {x: 0, y: 0}
+  Source: {fileID: 0}
+  Origin: {x: 0, y: 0}
   Speed: 15
+  aim: {fileID: -7769859230710215607}
+  ValuesGotSet:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!212 &4773922455064962934
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -148,3 +157,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &-7769859230710215607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8629037503731333111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2f381874e24a6544b4ecc687f263275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InaccuracyX: 1
+  InaccuracyY: 1
+  OffsetPref: 0
