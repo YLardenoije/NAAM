@@ -17,6 +17,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 1
+--- !u!114 &-8850468251130378106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Intensity
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &-8806143624044788129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,11 +105,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: D:/school/S4/GD/NAAM/ControlsTest/New Unity Project/Assets/Audio/FmodProject/RealProject/NAAM/Build/Desktop/Master.bank
   SubDir: 
-  lastModified: 637081154494558723
+  lastModified: 637088077640187219
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1612096
+    Value: 1834528
   Exists: 1
 --- !u!114 &-6497127177586001898
 MonoBehaviour:
@@ -277,12 +294,12 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -5467284930633102477}
   EditorParameters:
-  - {fileID: 9175581690603248617}
+  - {fileID: -8850468251130378106}
   MasterBanks:
   - {fileID: -7039337823936266295}
   StringsBanks:
   - {fileID: 2295862193713918306}
-  stringsBankWriteTime: 637081154494638625
+  stringsBankWriteTime: 637088077640357222
   cacheVersion: 3
 --- !u!114 &148894458200575846
 MonoBehaviour:
@@ -377,7 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: D:/school/S4/GD/NAAM/ControlsTest/New Unity Project/Assets/Audio/FmodProject/RealProject/NAAM/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637081154494638625
+  lastModified: 637088077640357222
   LoadResult: 0
   FileSizes:
   - Name: Desktop
