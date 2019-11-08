@@ -555,7 +555,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6080549856580446644, guid: f612c8a2b538c1d4f91d86a34e9333f9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 346292572131680301, guid: f612c8a2b538c1d4f91d86a34e9333f9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6054880341385294284, guid: f612c8a2b538c1d4f91d86a34e9333f9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 145593355357021317, guid: f612c8a2b538c1d4f91d86a34e9333f9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 145593355357021317, guid: f612c8a2b538c1d4f91d86a34e9333f9,
+        type: 3}
+      propertyPath: StopEvent
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5957308757545882733, guid: f612c8a2b538c1d4f91d86a34e9333f9,
         type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -9249,12 +9274,12 @@ PrefabInstance:
     - target: {fileID: 2796322109357033592, guid: 216f806165adb7c4fbfa9613c0ba7617,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.41
+      value: -10.55
       objectReference: {fileID: 0}
     - target: {fileID: 2796322109357033592, guid: 216f806165adb7c4fbfa9613c0ba7617,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.48
+      value: -10.6
       objectReference: {fileID: 0}
     - target: {fileID: 2796322109357033592, guid: 216f806165adb7c4fbfa9613c0ba7617,
         type: 3}
@@ -9891,7 +9916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebabe04c097e3c148bddcac34cc392f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalData: {fileID: 11400000, guid: 8e6859b43508577449bcb80fe7ac0759, type: 2}
+  GlobalData: {fileID: 11400000, guid: 5bceae546bb1a174a9fa7e6532d09c3a, type: 2}
   canvas: {fileID: 1149830092}
   player: {fileID: 0}
 --- !u!4 &2114440944

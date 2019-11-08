@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ce019553d4661142a6cb8f7989bd071, type: 3}
-  m_Name: GlobalData 1
+  m_Name: GlobalData
   m_EditorClassIdentifier: 
   IntensityChanged:
     m_PersistentCalls:
@@ -31,3 +31,4 @@ MonoBehaviour:
   SelectedMovementItem: 0
   SelectedCombatItem: 0
   SelectedHandedness: 0
+  Intensity: 210
