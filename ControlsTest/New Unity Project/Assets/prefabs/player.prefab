@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6054880341385294284}
   - component: {fileID: 145593355357021317}
   - component: {fileID: 5957308757545882733}
+  - component: {fileID: 7082117531082167839}
   m_Layer: 8
   m_Name: player
   m_TagString: Untagged
@@ -54,7 +55,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ES: {fileID: 0}
   mainCamera: {fileID: 0}
-  GlobalData: {fileID: 11400000, guid: 8e6859b43508577449bcb80fe7ac0759, type: 2}
+  GlobalData: {fileID: 11400000, guid: 5bceae546bb1a174a9fa7e6532d09c3a, type: 2}
   simultaneousTouches: 5
   player: {fileID: 3432069549735469574}
   minDragDistance: 95.8
@@ -79,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2426e998523b9564db16b399038f4b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalData: {fileID: 11400000, guid: 8e6859b43508577449bcb80fe7ac0759, type: 2}
+  GlobalData: {fileID: 11400000, guid: 5bceae546bb1a174a9fa7e6532d09c3a, type: 2}
   livingThing: {fileID: 0}
 --- !u!114 &-6541318514367280733
 MonoBehaviour:
@@ -257,3 +258,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ListenerNumber: -1
+--- !u!114 &7082117531082167839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6080549856580446641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55ce530caa128849aa99c31aef8e77c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GD: {fileID: 11400000, guid: 5bceae546bb1a174a9fa7e6532d09c3a, type: 2}

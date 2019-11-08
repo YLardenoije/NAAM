@@ -26,7 +26,7 @@ public class GlobalData : ScriptableObject
     private Player player;
     private List<Enemy> Enemies = new List<Enemy>();
 
-    public float Intensity { get;private set; }
+    public float Intensity;
 
     void Start()
     {
@@ -41,22 +41,29 @@ public class GlobalData : ScriptableObject
         
         Intensity += f;
         IntensityChanged.Invoke();
+        Debug.Log("intensity: " + Intensity);
+
     }
     public void SubtractIntesinty(float f)
     {
         Intensity -= f;
         IntensityChanged.Invoke();
+        Debug.Log("intensity: " + Intensity);
     }
     public void setIntensity(float f)
     {
         Intensity = f;
         IntensityChanged.Invoke();
+        Debug.Log("intensity: " + Intensity);
+
     }
 
     public void SetPlayer( Player player )
     {
         this.player = player;
         PlayerChanged.Invoke();
+        Debug.Log("intensity: " + Intensity);
+
     }
 
     public void RemovePlayer()

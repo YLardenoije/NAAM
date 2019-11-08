@@ -67,7 +67,7 @@ MonoBehaviour:
   livingThing: {fileID: 0}
   projectile: {fileID: 9079744925659971781, guid: 200e7a1e0dc333b4780950d0e14e7289,
     type: 3}
-  GlobalData: {fileID: 11400000, guid: 8e6859b43508577449bcb80fe7ac0759, type: 2}
+  GlobalData: {fileID: 11400000, guid: 5bceae546bb1a174a9fa7e6532d09c3a, type: 2}
   AttackTimer: 0
   CanSeePlayer: 0
   AttackChargeTimeInSeconds: 3

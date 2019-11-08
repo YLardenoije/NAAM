@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ce019553d4661142a6cb8f7989bd071, type: 3}
-  m_Name: GlobalData
+  m_Name: GlobalData 1
   m_EditorClassIdentifier: 
   IntensityChanged:
     m_PersistentCalls:
@@ -27,7 +27,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  SelectedItemType: 1
+  SelectedItemType: 0
   SelectedMovementItem: 0
-  SelectedCombatItem: 1
+  SelectedCombatItem: 0
   SelectedHandedness: 0
