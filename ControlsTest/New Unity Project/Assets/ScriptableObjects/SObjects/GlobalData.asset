@@ -12,8 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce019553d4661142a6cb8f7989bd071, type: 3}
   m_Name: GlobalData
   m_EditorClassIdentifier: 
-  SelectedItemType: 0
+  IntensityChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  PlayerChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  EnemyCountChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  SelectedItemType: 1
   SelectedMovementItem: 0
-  SelectedCombatItem: 0
+  SelectedCombatItem: 1
   SelectedHandedness: 0
-  player: {fileID: 0}
