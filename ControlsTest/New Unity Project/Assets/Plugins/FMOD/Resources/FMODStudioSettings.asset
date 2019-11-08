@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   SwitchSettingsMigration: 1
-  HasSourceProject: 1
-  HasPlatforms: 1
-  sourceProjectPath: Assets/Audio/FmodProject/RealProject/NAAM/NAAM.fspro
-  SourceBankPathUnformatted: Assets/Audio/FmodProject/RealProject/NAAM/Build
+  HasSourceProject: 0
+  HasPlatforms: 0
+  sourceProjectPath: Assets/Audio/FmodProject/Assignment2/Assignment2.fspro
+  SourceBankPathUnformatted: Assets/Audio/FmodProject/Assignment2/Builds/Desktop
   AutomaticEventLoading: 1
   BankLoadType: 0
   AutomaticSampleLoading: 0
@@ -75,7 +75,10 @@ MonoBehaviour:
   - Platform: 20
     Value: 32
   Plugins: []
-  MasterBanks: []
-  Banks: []
+  MasterBanks:
+  - Master
+  Banks:
+  - Master.assets
+  - Master.streams
   BanksToLoad: []
   LiveUpdatePort: 9264

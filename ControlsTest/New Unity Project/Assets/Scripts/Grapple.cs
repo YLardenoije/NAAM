@@ -15,6 +15,7 @@ public class Grapple : MonoBehaviour
     private float attachedTime = 0;
     [SerializeField] private float maxAttachedTime=1;
     [SerializeField] private float MinimalHoldDistance = 1;
+    [SerializeField] private LineRenderer lr;
 
 
     private void Awake()
@@ -42,6 +43,7 @@ public class Grapple : MonoBehaviour
     {
         if( Attached )
         {
+            lr.SetPosition(1, Source.transform.position);
             attachedTime += Time.deltaTime;
             if( HitObjectIsEnemy && HitObject != null )
             {
@@ -81,6 +83,7 @@ public class Grapple : MonoBehaviour
         {
             projectile.Collided();
             Attached = true;
+            lr.SetPosition(0, transform.position);
             HitObject = col.gameObject;
             HitLoc = transform.position;
             if( HitObject.GetComponent<Enemy>() != null )

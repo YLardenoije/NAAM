@@ -17,6 +17,26 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 1
+--- !u!114 &-8951613117572157160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.assets.bank
+  m_EditorClassIdentifier: 
+  Path: D:/school/S4/GD/NAAM/ControlsTest/New Unity Project/Assets/Audio/FmodProject/Assignment2/Builds/Desktop/Master.assets.bank
+  SubDir: 
+  lastModified: 637088222098984540
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 122784
+  Exists: 1
 --- !u!114 &-8850468251130378106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,6 +71,23 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 1
+--- !u!114 &-8798489766375645549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/ThreatLevel
+  m_EditorClassIdentifier: 
+  Name: ThreatLevel
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 0
 --- !u!114 &-8507454590235444649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +128,43 @@ MonoBehaviour:
   - Name: 
     Value: 884
   Exists: 1
+--- !u!114 &-8142255305931874742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.streams.bank
+  m_EditorClassIdentifier: 
+  Path: D:/school/S4/GD/NAAM/ControlsTest/New Unity Project/Assets/Audio/FmodProject/Assignment2/Builds/Desktop/Master.streams.bank
+  SubDir: 
+  lastModified: 637088222099424541
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 1716256
+  Exists: 1
+--- !u!114 &-7886944467428954450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/ThreatLevel
+  m_EditorClassIdentifier: 
+  Name: ThreatLevel
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 0
 --- !u!114 &-7039337823936266295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +186,23 @@ MonoBehaviour:
     Value: 1834528
   Exists: 1
 --- !u!114 &-6497127177586001898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/ThreatLevel
+  m_EditorClassIdentifier: 
+  Name: ThreatLevel
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
+--- !u!114 &-5949875123812435369
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,6 +242,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 96000
+--- !u!114 &-4623316402745444161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: D:/school/S4/GD/NAAM/ControlsTest/New Unity Project/Assets/Audio/FmodProject/Assignment2/Builds/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637088222099484649
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 1034
+  Exists: 1
 --- !u!114 &-4224334954420764532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +325,60 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-3320659142616472376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/ThreatLevel
+  m_EditorClassIdentifier: 
+  Name: ThreatLevel
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
+--- !u!114 &-3309232354355702921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/NearMiss
+  m_EditorClassIdentifier: 
+  Name: NearMiss
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
+--- !u!114 &-3044583875793638420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: D:/school/S4/GD/NAAM/ControlsTest/New Unity Project/Assets/Audio/FmodProject/Assignment2/Builds/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637088222098614656
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 11870
+  Exists: 1
 --- !u!114 &-2995546862295062341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,6 +424,23 @@ MonoBehaviour:
   - Name: Mobile
     Value: 884
   Exists: 1
+--- !u!114 &-2637897952428098588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/NearMiss
+  m_EditorClassIdentifier: 
+  Name: NearMiss
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
 --- !u!114 &-2199423844115168333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,17 +471,20 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 2295862193713918306}
-  - {fileID: -7039337823936266295}
+  - {fileID: -4623316402745444161}
+  - {fileID: -8951613117572157160}
+  - {fileID: -3044583875793638420}
+  - {fileID: -8142255305931874742}
   EditorEvents:
-  - {fileID: -5467284930633102477}
-  EditorParameters:
-  - {fileID: -8850468251130378106}
+  - {fileID: 7052918527237795470}
+  - {fileID: 7845175168071511029}
+  - {fileID: 237360001507515387}
+  EditorParameters: []
   MasterBanks:
-  - {fileID: -7039337823936266295}
+  - {fileID: -3044583875793638420}
   StringsBanks:
-  - {fileID: 2295862193713918306}
-  stringsBankWriteTime: 637088077640357222
+  - {fileID: -4623316402745444161}
+  stringsBankWriteTime: 637088222099484649
   cacheVersion: 3
 --- !u!114 &148894458200575846
 MonoBehaviour:
@@ -318,6 +503,51 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 1
+--- !u!114 &177715472552073545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: D:/school/S4/GD/NAAM/ControlsTest/New Unity Project/Assets/Audio/FmodProject/Assignment2/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637075974753047588
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 884
+  - Name: Mobile
+    Value: 884
+  Exists: 1
+--- !u!114 &237360001507515387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerGrapple
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerGrapple
+  guid: 4df6ba9d4d3adc4b9f44bf0b4c7cc16f
+  Banks:
+  - {fileID: -3044583875793638420}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1375
 --- !u!114 &522454398439845770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +568,62 @@ MonoBehaviour:
   - Name: 
     Value: 1837184
   Exists: 1
+--- !u!114 &1054684471037573020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/NearMiss
+  m_EditorClassIdentifier: 
+  Name: NearMiss
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &1354641352038200746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: D:/school/S4/GD/NAAM/ControlsTest/New Unity Project/Assets/Audio/FmodProject/Assignment2/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637075974752797444
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1837184
+  - Name: Mobile
+    Value: 1837184
+  Exists: 1
+--- !u!114 &1379861039511969749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/ThreatLevel
+  m_EditorClassIdentifier: 
+  Name: ThreatLevel
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 0
 --- !u!114 &1412991394864192446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,6 +686,23 @@ MonoBehaviour:
   - Name: Desktop
     Value: 792
   Exists: 1
+--- !u!114 &2643966066917714063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/ThreatLevel
+  m_EditorClassIdentifier: 
+  Name: ThreatLevel
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &2717978574939777426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,6 +758,29 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 1
+--- !u!114 &4471317664862449231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MEh
+  m_EditorClassIdentifier: 
+  Path: event:/MEh
+  guid: 2d880c7306479a4084b973fb9f0ac015
+  Banks:
+  - {fileID: 1354641352038200746}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &4822181670292358535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,6 +827,130 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 112153
+--- !u!114 &6767016057566655729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/NearMiss
+  m_EditorClassIdentifier: 
+  Name: NearMiss
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &6780956654317669500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/New Event
+  m_EditorClassIdentifier: 
+  Path: event:/New Event
+  guid: e7820d83f00b164b92b7659c955edb76
+  Banks:
+  - {fileID: 1354641352038200746}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7081663411906347015}
+  - {fileID: 2643966066917714063}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 112153
+--- !u!114 &7052918527237795470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/New Event
+  m_EditorClassIdentifier: 
+  Path: event:/New Event
+  guid: e7820d83f00b164b92b7659c955edb76
+  Banks:
+  - {fileID: -3044583875793638420}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7388032478366313515}
+  - {fileID: -3320659142616472376}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 112153
+--- !u!114 &7081663411906347015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/NearMiss
+  m_EditorClassIdentifier: 
+  Name: NearMiss
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
+--- !u!114 &7388032478366313515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/NearMiss
+  m_EditorClassIdentifier: 
+  Name: NearMiss
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
+--- !u!114 &7845175168071511029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/EnemyFireball
+  m_EditorClassIdentifier: 
+  Path: event:/EnemyFireball
+  guid: 0d9a123fcee6f646bd1ee3aac0ec4731
+  Banks:
+  - {fileID: -3044583875793638420}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 312
 --- !u!114 &8466732704955324268
 MonoBehaviour:
   m_ObjectHideFlags: 0
