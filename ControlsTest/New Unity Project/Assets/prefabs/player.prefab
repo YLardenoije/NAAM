@@ -52,6 +52,7 @@ MonoBehaviour:
   ES: {fileID: 0}
   mainCamera: {fileID: 0}
   GlobalData: {fileID: 11400000, guid: 8e6859b43508577449bcb80fe7ac0759, type: 2}
+  animator: {fileID: 346292572131680301}
   MovementSpeed: 50
   simultaneousTouches: 5
   player: {fileID: 3432069549735469574}
