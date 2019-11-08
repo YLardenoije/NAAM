@@ -7,10 +7,10 @@ public class PathFinding : MonoBehaviour
     [SerializeField] private float MoveSpeed;
     [SerializeField] private int MaxWanderDistance;
     [SerializeField] private float StickToDirectionChance;
-    private Vector3 StartPosition;
-    private Vector3 WanderGoal;
-    private bool GoingLeft;
-    private float waitTime = 0, waitedTime = 0;
+    [SerializeField] private Vector3 StartPosition;
+    [SerializeField] private Vector3 WanderGoal;
+    [SerializeField] private bool GoingLeft;
+    [SerializeField] private float waitTime = 0, waitedTime = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,15 +21,8 @@ public class PathFinding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        waitedTime += Time.deltaTime;
         if( StartPosition == WanderGoal  && waitedTime >= waitTime )
         {
-            waitTime = ConsiderWait();
-            if (waitTime > 0)
-            {
-                waitedTime = 0;
-                return;
-            }
             Vector3 floorPos = new Vector3(transform.position.x + (GoingLeft ? -1 : 1), transform.position.y - 1, transform.position.z);
             Vector3 WallPos = new Vector3(transform.position.x + (GoingLeft ? -1 : 1), transform.position.y, transform.position.z);
             if (Physics.CheckSphere( floorPos , 0.2f) == false || Physics.CheckSphere( WallPos, 0.2f ) == true )
@@ -44,7 +37,19 @@ public class PathFinding : MonoBehaviour
         }
         else
         {
-            transform.Translate( WanderGoal, Space.World );
+            transform.Translate( WanderGoal.normalized * Time.deltaTime * MoveSpeed, Space.World );
+            if( (WanderGoal - transform.position).magnitude < 1 && (WanderGoal - transform.position).magnitude > -1 )
+            {
+                transform.position = WanderGoal;
+            }
+        }
+
+        waitedTime += Time.deltaTime;
+        waitTime = ConsiderWait();
+        if (waitTime > 0)
+        {
+            waitedTime = 0;
+            return;
         }
     }
 
