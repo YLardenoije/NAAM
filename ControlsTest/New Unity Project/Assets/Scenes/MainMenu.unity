@@ -1700,7 +1700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71f48b743b9d07f4698f0b01ea72ebbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalData: {fileID: 11400000, guid: 8e6859b43508577449bcb80fe7ac0759, type: 2}
+  GlobalData: {fileID: 11400000, guid: 5bceae546bb1a174a9fa7e6532d09c3a, type: 2}
   HandedNessText: {fileID: 566026186}
   LevelNameText: {fileID: 1741594594}
   WeaponNameText: {fileID: 1096602782}

@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float minDragDistance = Screen.width * 0.1f;
     [SerializeField] private Animator animator;
     public float MovementSpeed = 10;
-    public Projectile GrapplePrefab, FireBallPrefab, BlastWavePrefab;
+    public Projectile GrapplePrefab, FireBallPrefab, ScatterPrefab;
     public Projectile CurrentGrapple;
 
     private Transform tf;
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
             ES = FindObjectOfType<EventSystem>();
         }
 
-        if( GlobalData.SelectedCombatItem == GlobalData.CombatItems.BlastWave )
+        if( GlobalData.SelectedCombatItem == GlobalData.CombatItems.Scatter )
         {
             AttackCooldown = 1.5f;
         }
@@ -165,11 +165,12 @@ public class PlayerController : MonoBehaviour
                     FB.SetValues(endpoint, player.gameObject);
                 }
                 break;
-            case GlobalData.CombatItems.BlastWave:
-                if (BlastWavePrefab != null )
+            case GlobalData.CombatItems.Scatter:
+                if (ScatterPrefab != null )
                 {
-                    Projectile BW = Instantiate(BlastWavePrefab, transform.position, transform.rotation);
-                    BW.SetValues(endpoint, player.gameObject);
+                    Projectile Sc = Instantiate(ScatterPrefab, transform.position, transform.rotation);
+                    Sc.GetComponent<Scatter>().Source = player.gameObject;
+                    Sc.GetComponent<Rigidbody2D>().AddRelativeForce(endpoint.normalized, ForceMode2D.Force);
                 }
                 break;
         }

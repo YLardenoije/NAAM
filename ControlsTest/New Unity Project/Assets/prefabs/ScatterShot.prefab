@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 6708674364813050603}
   - component: {fileID: 7427982099423255874}
   - component: {fileID: 5255121726281581847}
-  - component: {fileID: 6315944814380947311}
   - component: {fileID: 6060638651242138587}
-  - component: {fileID: 2199579890890681896}
   - component: {fileID: 7799902861185707221}
-  m_Layer: 10
+  - component: {fileID: 4917028850388206182}
+  m_Layer: 8
   m_Name: ScatterShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +51,7 @@ MonoBehaviour:
   Source: {fileID: 0}
   Origin: {x: 0, y: 0}
   Speed: 8
-  aim: {fileID: 2199579890890681896}
+  aim: {fileID: 0}
   ValuesGotSet:
     m_PersistentCalls:
       m_Calls: []
@@ -106,27 +105,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &6315944814380947311
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9038143463022269846}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
 --- !u!58 &6060638651242138587
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -143,21 +121,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
---- !u!114 &2199579890890681896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9038143463022269846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2f381874e24a6544b4ecc687f263275, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InaccuracyX: 1
-  InaccuracyY: 1
-  OffsetPref: 2
 --- !u!114 &7799902861185707221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +135,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {x: 0, y: 0}
   Source: {fileID: 0}
-  ParentShot: 0
   AdditionalShots: 4
-  speed: 1
+  speed: 1000
+  projectile: {fileID: 0}
+--- !u!50 &4917028850388206182
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9038143463022269846}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

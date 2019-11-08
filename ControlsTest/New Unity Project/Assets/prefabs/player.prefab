@@ -65,8 +65,7 @@ MonoBehaviour:
     type: 3}
   FireBallPrefab: {fileID: 7906331030256008995, guid: efcabe6a37774af488cc1a56bfb26b34,
     type: 3}
-  BlastWavePrefab: {fileID: 9079744925659971781, guid: c2f702ae62ba25043ad783ed6a67ed49,
-    type: 3}
+  ScatterPrefab: {fileID: 0}
   CurrentGrapple: {fileID: 0}
 --- !u!114 &3432069549735469574
 MonoBehaviour:

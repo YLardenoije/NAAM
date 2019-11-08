@@ -54,7 +54,7 @@ public class GuiBehaviour : MonoBehaviour
         }
         else
         {
-            WeaponNameText.text = "Blastwave";
+            WeaponNameText.text = "Scatter";
         }
     }
 
@@ -91,8 +91,8 @@ public class GuiBehaviour : MonoBehaviour
     {
         if( GlobalData.SelectedCombatItem == GlobalData.CombatItems.FireBall )
         {
-            GlobalData.SelectedCombatItem = GlobalData.CombatItems.BlastWave;
-            WeaponNameText.text = "Blastwave";
+            GlobalData.SelectedCombatItem = GlobalData.CombatItems.Scatter;
+            WeaponNameText.text = "Scatter";
         }
         else
         {

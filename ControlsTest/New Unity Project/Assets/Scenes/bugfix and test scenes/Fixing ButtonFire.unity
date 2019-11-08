@@ -538,7 +538,7 @@ PrefabInstance:
     - target: {fileID: 6080549856580446645, guid: f612c8a2b538c1d4f91d86a34e9333f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6080549856580446645, guid: f612c8a2b538c1d4f91d86a34e9333f9,
         type: 3}
@@ -9891,7 +9891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebabe04c097e3c148bddcac34cc392f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalData: {fileID: 11400000, guid: 8e6859b43508577449bcb80fe7ac0759, type: 2}
+  GlobalData: {fileID: 11400000, guid: 5bceae546bb1a174a9fa7e6532d09c3a, type: 2}
   canvas: {fileID: 1149830092}
   player: {fileID: 0}
 --- !u!4 &2114440944
@@ -9906,7 +9906,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2114440945
 MonoBehaviour:

@@ -50,9 +50,12 @@ public class Projectile : MonoBehaviour
 
         if (!HasHitSomething)
         {
-            transform.Translate(
+            if( Target != null )
+            {
+                transform.Translate(
                 (hit.point - Origin).normalized * Speed * Time.deltaTime
-                , Space.Self );
+                , Space.Self);
+            }
         }        
     }
 
