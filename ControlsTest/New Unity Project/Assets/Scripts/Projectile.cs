@@ -12,6 +12,7 @@ public class Projectile : MonoBehaviour
     public RaycastHit2D hit; // the actual hit location
     private bool HasHitSomething;
     [SerializeField] private float Speed;
+    [SerializeField] private AimBehaviour aim;
     private int magicNumber = 100; //this makes sure the projectile keeps flying forever, until it hits.
     public UnityEvent ValuesGotSet = new UnityEvent();
 
@@ -32,7 +33,11 @@ public class Projectile : MonoBehaviour
 
         int layermask = 1 << gameObject.layer;
         layermask = ~layermask;
-
+        if( aim != null )
+        {
+            Target = aim.Offset(Target);
+        }
+        
 
         hit = Physics2D.Raycast(transform.position,
             Target - new Vector2(transform.position.x, transform.position.y),

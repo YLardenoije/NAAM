@@ -13,19 +13,24 @@ public class PlayerController : MonoBehaviour
     [SerializeField] EventSystem ES;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GlobalData GlobalData;
+    [SerializeField] int simultaneousTouches = 5;
+    [SerializeField] private Player player;
+    [SerializeField] private float minDragDistance = Screen.width * 0.1f;
     [SerializeField] private Animator animator;
-    private Transform tf;
-    private Rigidbody2D rb;
     public float MovementSpeed = 10;
+    public Projectile GrapplePrefab, FireBallPrefab, BlastWavePrefab;
+    public Projectile CurrentGrapple;
+
+    private Transform tf;
+    private Rigidbody2D rb;    
     private bool Grappling = false;
     private Vector2 grapplepoint;
     private Vector2[] FirstTouchPositions, lastTouchPositions;
-    [SerializeField] int simultaneousTouches = 5;
-
-    private float minDragDistance = Screen.width*0.1f;
-    [SerializeField] private Player player;
-    [SerializeField] private Projectile GrapplePrefab, FireBallPrefab;
-    public Projectile CurrentGrapple;
+    private float AttackCooldown;
+    private float TimeSinceLastAttack = 0;
+    
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +45,15 @@ public class PlayerController : MonoBehaviour
         if( ES == null )
         {
             ES = FindObjectOfType<EventSystem>();
+        }
+
+        if( GlobalData.SelectedCombatItem == GlobalData.CombatItems.BlastWave )
+        {
+            AttackCooldown = 1.5f;
+        }
+        else if( GlobalData.SelectedCombatItem == GlobalData.CombatItems.FireBall )
+        {
+            AttackCooldown = 0.4f;
         }
 
     }
@@ -60,6 +74,7 @@ public class PlayerController : MonoBehaviour
             animator.SetInteger("Dir", 0); 
 
         }
+        TimeSinceLastAttack += Time.deltaTime;
         rb.AddForce(new Vector2(tilt, 0)); //tilting should be working like this? // i guess it does C:
         HandleTouches();
     }
@@ -69,7 +84,6 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(CurrentGrapple.gameObject);
             CurrentGrapple = null;
-  
         }
         if (IsCombatItem)
         {
@@ -77,10 +91,13 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            FireGrapple(_EndPoint);
+            if( GrapplePrefab != null )
+            {
+                FireGrapple(_EndPoint);
+            }
         }         
     }
-    void HandleTouches()
+    void HandleTouches() //huehuehue
     {
         int i = 0;
         foreach (Touch t in Input.touches)
@@ -112,7 +129,12 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    Fire(Endpoint, IsCombatItem: true );
+                    if( TimeSinceLastAttack > AttackCooldown )
+                    {
+                        Fire(Endpoint, IsCombatItem: true );
+                        TimeSinceLastAttack = 0;
+                    }
+                   
                 }
             }
                 i++;
@@ -129,18 +151,26 @@ public class PlayerController : MonoBehaviour
                     CurrentGrapple = Instantiate(GrapplePrefab, transform.position, transform.rotation);
                     CurrentGrapple.SetValues(endpoint, player.gameObject);
                 }
-               
                 break;
         }
-
     }
     void FireProjectile(Vector2 endpoint)
     {
         switch (GlobalData.SelectedCombatItem)
         {
             case GlobalData.CombatItems.FireBall:
-                Projectile FB = Instantiate(FireBallPrefab, transform.position, transform.rotation);
-                FB.SetValues(endpoint, player.gameObject);
+                if (FireBallPrefab != null )
+                {
+                    Projectile FB = Instantiate(FireBallPrefab, transform.position, transform.rotation);
+                    FB.SetValues(endpoint, player.gameObject);
+                }
+                break;
+            case GlobalData.CombatItems.BlastWave:
+                if (BlastWavePrefab != null )
+                {
+                    Projectile BW = Instantiate(BlastWavePrefab, transform.position, transform.rotation);
+                    BW.SetValues(endpoint, player.gameObject);
+                }
                 break;
         }
     }
