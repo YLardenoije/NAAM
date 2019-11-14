@@ -27,15 +27,18 @@ public class Goal : MonoBehaviour
             Player player = collision.GetComponent<Player>();
             if (player != null)
             {
-                Debug.Log(this.name + "Was hit. Next spawn: " + NextSpawn.name);
-                Destroy(player.GetComponent<PlayerController>().CurrentGrapple);
-                player.transform.position = NextSpawn.transform.position;
-                player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-
-                Projectile g = player.GetComponent<PlayerController>().CurrentGrapple;
-                if( g != null )
+                if( NextSpawn != null )
                 {
-                    Destroy(g);
+                    Debug.Log(this.name + "Was hit. Next spawn: " + NextSpawn.name);
+                    Destroy(player.GetComponent<PlayerController>().CurrentGrapple);
+                    player.transform.position = NextSpawn.transform.position;
+                    player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+                    Projectile g = player.GetComponent<PlayerController>().CurrentGrapple;
+                    if (g != null)
+                    {
+                        Destroy(g);
+                    }
                 }
                 GoalReached.Invoke();
             }
