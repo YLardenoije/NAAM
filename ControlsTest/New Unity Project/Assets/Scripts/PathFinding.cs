@@ -6,8 +6,9 @@ public class PathFinding : MonoBehaviour
 {
     [SerializeField] private float MoveSpeed;
     [SerializeField] private int MaxWanderDistance;
-    [SerializeField] private float StickToDirectionChance;
+    [SerializeField] private float StickToDirectionChance, WaitChance;
     [SerializeField] private Vector3 StartPosition;
+    [SerializeField] private Vector3 WanderStart;
     [SerializeField] private Vector3 WanderGoal;
     [SerializeField] private bool GoingLeft;
     [SerializeField] private float waitTime = 0, waitedTime = 0;
@@ -16,46 +17,88 @@ public class PathFinding : MonoBehaviour
     {
         StartPosition = gameObject.transform.position;
         WanderGoal = StartPosition;
+        WanderStart = StartPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if( StartPosition == WanderGoal  && waitedTime >= waitTime )
-        {
-            Vector3 floorPos = new Vector3(transform.position.x + (GoingLeft ? -1 : 1), transform.position.y - 1, transform.position.z);
-            Vector3 WallPos = new Vector3(transform.position.x + (GoingLeft ? -1 : 1), transform.position.y, transform.position.z);
-            if (Physics.CheckSphere( floorPos , 0.2f) == false || Physics.CheckSphere( WallPos, 0.2f ) == true )
-            {
-                GoingLeft = !GoingLeft;
-            }
-            else
-            {
-                ConsiderTurn();
-            }
-            WanderGoal = new Vector3(transform.position.x + (GoingLeft ? -1 : 1), transform.position.y, transform.position.z);
-        }
-        else
-        {
-            transform.Translate( WanderGoal.normalized * Time.deltaTime * MoveSpeed, Space.World );
-            if( (WanderGoal - transform.position).magnitude < 1 && (WanderGoal - transform.position).magnitude > -1 )
-            {
-                transform.position = WanderGoal;
-            }
-        }
-
         waitedTime += Time.deltaTime;
-        waitTime = ConsiderWait();
-        if (waitTime > 0)
+        if (transform.position == WanderGoal) //If we are at the most recent goal, get a new goal
         {
-            waitedTime = 0;
-            return;
+            if (waitedTime > waitTime) // Our wait is over.
+            {
+                waitedTime = 0;
+                waitTime = ConsiderWait(); // Possibly wait more.
+            }
+            if ( waitTime == 0 )
+            {
+                if (GoingLeft)
+                {
+                    if (Physics.Raycast(new Vector3(transform.position.x - 1, transform.position.y - 1, 1), Vector3.forward, 2)) // Found a piece of ground to walk on, proceed.
+                    {
+                        if (Physics.Raycast(new Vector3(transform.position.x - 1, transform.position.y, 1), Vector3.forward, 2)) // But if a wall obstructs it, never mind.
+                        {
+                            GoingLeft = !GoingLeft; // Change direction
+                        }
+                        else
+                        {
+                            ConsiderTurn(); // Maybe change direction
+                        }
+                    }
+                    else // There is no more ground to walk on
+                    {
+                        GoingLeft = !GoingLeft;
+                    }
+                }
+                else
+                {
+                    if (Physics.Raycast(new Vector3(transform.position.x + 1, transform.position.y - 1, 1), Vector3.forward, 2)) // Found a piece of ground to walk on, proceed.
+                    {
+                        if (Physics.Raycast(new Vector3(transform.position.x + 1, transform.position.y, 1), Vector3.forward, 2)) // But if a wall obstructs it, never mind.
+                        {
+                            GoingLeft = !GoingLeft; // Change direction
+                        }
+                        else
+                        {
+                            ConsiderTurn(); // Maybe change direction
+                        }
+                    }
+                    else // There is no more ground to walk on
+                    {
+                        GoingLeft = !GoingLeft;
+                    }
+                }
+                // As of now we know what direction to go to. Now define the next place to walk to.
+                if (GoingLeft)
+                {
+                    WanderGoal = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+                }
+                else
+                {
+                    WanderGoal = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+                }
+            }
+        }
+        else // We arent there yet, keep on moving
+        {
+            transform.position = Vector3.MoveTowards(transform.position, WanderGoal, MoveSpeed * Time.deltaTime); // Move towards the goal
+
+            // In case we passed it by accident
+            if (transform.position.x > WanderGoal.x && !GoingLeft)
+            {
+                //transform.position = WanderGoal;
+            }
+            else if (transform.position.x < WanderGoal.x && GoingLeft)
+            {
+                //transform.position = WanderGoal;
+            }
         }
     }
 
     private void ConsiderTurn()
     {
-        if( Random.Range(0, 1) > StickToDirectionChance )
+        if( Random.Range(0f, 1f) < StickToDirectionChance )
         {
             GoingLeft = !GoingLeft;
         }
@@ -63,7 +106,7 @@ public class PathFinding : MonoBehaviour
 
     private float ConsiderWait()
     {
-        if( Random.Range( 0, 1) < 0.3f )
+        if( Random.Range( 0f, 1f) < WaitChance )
         {
             return Random.Range(0f, 4f);
         }
