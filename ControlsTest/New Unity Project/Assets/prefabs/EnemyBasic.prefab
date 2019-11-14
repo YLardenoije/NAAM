@@ -174,3 +174,10 @@ MonoBehaviour:
   MoveSpeed: 1
   MaxWanderDistance: 3
   StickToDirectionChance: 0.8
+  WaitChance: 0.5
+  StartPosition: {x: 0, y: 0, z: 0}
+  WanderStart: {x: 0, y: 0, z: 0}
+  WanderGoal: {x: 0, y: 0, z: 0}
+  GoingLeft: 0
+  waitTime: 0
+  waitedTime: 0

@@ -77,7 +77,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   livingThing: {fileID: 0}
   projectile: {fileID: 0}
-  GlobalData: {fileID: 11400000, guid: 8e6859b43508577449bcb80fe7ac0759, type: 2}
+  GlobalData: {fileID: 11400000, guid: 5bceae546bb1a174a9fa7e6532d09c3a, type: 2}
   AttackTimer: 0
   RespawnPoint: {fileID: 0}
   CanSeePlayer: 0

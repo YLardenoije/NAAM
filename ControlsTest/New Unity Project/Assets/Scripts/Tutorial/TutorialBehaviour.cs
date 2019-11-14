@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialBehaviour : MonoBehaviour
 {
@@ -57,6 +58,9 @@ public class TutorialBehaviour : MonoBehaviour
                 break;
             case 5:
                 Cam.m_Lens.OrthographicSize = 4;
+                break;
+            case 6:
+                SceneManager.LoadScene("MainMenu");
                 break;
         }
     }
