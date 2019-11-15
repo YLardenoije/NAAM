@@ -27,8 +27,13 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  GrappleIsAttachedStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   SelectedItemType: 0
   SelectedMovementItem: 0
   SelectedCombatItem: 0
-  SelectedHandedness: 0
-  Intensity: 210
+  SelectedHandedness: 1
+  Intensity: 0

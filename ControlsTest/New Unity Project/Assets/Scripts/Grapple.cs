@@ -41,12 +41,14 @@ public class Grapple : MonoBehaviour
 
     private void OnDestroy()
     {
+        gd.SetGrappleState(false);
         //set attached to 0;
     }
     void Update()
     {
         if( Attached )
         {
+            
             if (lr!=null && Source!=null)
             {
             lr.SetPosition(1, Source.transform.position);
@@ -88,6 +90,7 @@ public class Grapple : MonoBehaviour
     {
         if( Attached == false && col.gameObject.GetComponent<Player>() == null )
         {
+            gd.SetGrappleState(true);
             projectile.Collided();
             Attached = true;
             lr.SetPosition(0, transform.position);
