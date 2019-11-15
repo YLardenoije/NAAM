@@ -894,6 +894,12 @@ PrefabInstance:
       propertyPath: LeaveUI
       value: 
       objectReference: {fileID: 1498775024}
+    - target: {fileID: 7082117531082167839, guid: f612c8a2b538c1d4f91d86a34e9333f9,
+        type: 3}
+      propertyPath: GD
+      value: 
+      objectReference: {fileID: 11400000, guid: 5bceae546bb1a174a9fa7e6532d09c3a,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f612c8a2b538c1d4f91d86a34e9333f9, type: 3}
 --- !u!4 &560608833 stripped
