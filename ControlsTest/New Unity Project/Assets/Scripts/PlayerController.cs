@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private float minDragDistance = Screen.width * 0.1f;
     [SerializeField] private Animator animator;
-    [SerializeField] private GameObject LeaveUI;
+    public GameObject LeaveUI;
     public float MovementSpeed = 10;
     public Projectile GrapplePrefab, FireBallPrefab, ScatterPrefab;
     public Projectile CurrentGrapple;
@@ -77,7 +77,11 @@ public class PlayerController : MonoBehaviour
         }
         TimeSinceLastAttack += Time.deltaTime;
         rb.AddForce(new Vector2(tilt, 0)); //tilting should be working like this? // i guess it does C:
-        HandleTouches();
+        if( !LeaveUI.activeSelf )
+        {
+            HandleTouches();
+        }
+        
         if( Input.GetKeyDown(KeyCode.Escape) )
         {
             LeaveUI.SetActive(!LeaveUI.activeSelf);

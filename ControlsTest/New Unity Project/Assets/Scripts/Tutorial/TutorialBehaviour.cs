@@ -9,6 +9,7 @@ public class TutorialBehaviour : MonoBehaviour
     [SerializeField] private Player PlayerPrefab;
     [SerializeField] private int TutorialProgress;
     [SerializeField] private Cinemachine.CinemachineVirtualCamera Cam;
+    [SerializeField] private GameObject Canvas;
 
     private Player player;
     private PlayerController pc;
@@ -41,6 +42,7 @@ public class TutorialBehaviour : MonoBehaviour
                 FireballPrefab = pc.FireBallPrefab;
                 pc.GrapplePrefab = null; //remove the grapple from the player, so that he cant use it for now.
                 pc.FireBallPrefab = null; //remove the fireball as well.
+                pc.LeaveUI = Canvas;
                 break;
             case 1:
                 Cam.m_Lens.OrthographicSize = 4;
@@ -60,7 +62,7 @@ public class TutorialBehaviour : MonoBehaviour
                 Cam.m_Lens.OrthographicSize = 4;
                 break;
             case 6:
-                SceneManager.LoadScene("MainMenu");
+                BackToMainMenu();
                 break;
         }
     }
@@ -68,5 +70,10 @@ public class TutorialBehaviour : MonoBehaviour
     void OnTutProgress()
     {
         TutorialProgress++;
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
