@@ -16,6 +16,7 @@ public class Grapple : MonoBehaviour
     [SerializeField] private float maxAttachedTime=1;
     [SerializeField] private float MinimalHoldDistance = 1;
     [SerializeField] private LineRenderer lr;
+    [SerializeField] GlobalData gd;
 
 
     private void Awake()
@@ -38,7 +39,10 @@ public class Grapple : MonoBehaviour
         Debug.Log("Source is: " + Source);  
     }
 
-
+    private void OnDestroy()
+    {
+        //set attached to 0;
+    }
     void Update()
     {
         if( Attached )

@@ -15,8 +15,12 @@ public class FMODParameterEditor : MonoBehaviour
         FmodEv = GetComponent<StudioEventEmitter>().EventInstance;
         //FmodEv.getParameterByName("ThreatLevel", out threat);
         GD.IntensityChanged.AddListener(OnIntensityChange);
+        GD.GrappleIsAttachedStateChanged.AddListener(OnGrappleChanged);
     }
-
+    private void OnGrappleChanged()
+    {
+        FmodEv.setParameterByName("GrappleActive", GD.GetGrappleIsAttached()?1f:0f);
+    }
     // Update is called once per frame
     public void OnIntensityChange()
     {

@@ -10,7 +10,7 @@ public class GlobalData : ScriptableObject
     public UnityEvent IntensityChanged = new UnityEvent();
     public UnityEvent PlayerChanged = new UnityEvent();
     public UnityEvent EnemyCountChanged = new UnityEvent();
-
+    public UnityEvent GrappleIsAttachedStateChanged = new UnityEvent();
     
 
     public enum ItemTypes { MovementItem = 0, CombatItem };
@@ -25,6 +25,7 @@ public class GlobalData : ScriptableObject
 
     private Player player;
     private List<Enemy> Enemies = new List<Enemy>();
+    private bool GrappleAttached = false;
 
     public float Intensity;
 
@@ -110,4 +111,19 @@ public class GlobalData : ScriptableObject
     {
         return Enemies.Count;
     }
+
+    public bool GetGrappleIsAttached()
+    {
+        return GrappleAttached;
+    }
+    public void SetGrappleState(bool State)
+    {
+        if (State != GrappleAttached)
+        {
+        GrappleAttached = State;
+            GrappleIsAttachedStateChanged.Invoke();
+        }
+
+    }
+
 }

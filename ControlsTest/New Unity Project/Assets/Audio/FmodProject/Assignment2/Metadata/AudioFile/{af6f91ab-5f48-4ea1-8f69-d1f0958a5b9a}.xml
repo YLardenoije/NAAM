@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{af6f91ab-5f48-4ea1-8f69-d1f0958a5b9a}">
+		<property name="assetPath">
+			<value>DuringGrapple2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.0031065759637188</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b93dcf3e-714b-48af-ab49-00050861adcd}</destination>
+		</relationship>
+	</object>
+</objects>

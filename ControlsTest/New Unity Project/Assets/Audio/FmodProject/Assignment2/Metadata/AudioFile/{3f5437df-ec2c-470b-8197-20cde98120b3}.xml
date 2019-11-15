@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{3f5437df-ec2c-470b-8197-20cde98120b3}">
+		<property name="assetPath">
+			<value>blessing.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.1432199546485258</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b93dcf3e-714b-48af-ab49-00050861adcd}</destination>
+		</relationship>
+	</object>
+</objects>

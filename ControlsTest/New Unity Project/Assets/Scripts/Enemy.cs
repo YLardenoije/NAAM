@@ -63,6 +63,7 @@ public class Enemy : MonoBehaviour
 
     public void OnDeath()
     {
+        GlobalData.SubtractIntesinty(IntensityValue);
         //gameObject.SetActive(false); FOR OBJ POOL
         Destroy(gameObject); 
     }

@@ -31,11 +31,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: D:/school/S4/GD/NAAM/ControlsTest/New Unity Project/Assets/Audio/FmodProject/Assignment2/Builds/Desktop/Master.assets.bank
   SubDir: 
-  lastModified: 637088222098984540
+  lastModified: 637093613879564974
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 122784
+    Value: 145440
   Exists: 1
 --- !u!114 &-8850468251130378106
 MonoBehaviour:
@@ -142,13 +142,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: D:/school/S4/GD/NAAM/ControlsTest/New Unity Project/Assets/Audio/FmodProject/Assignment2/Builds/Desktop/Master.streams.bank
   SubDir: 
-  lastModified: 637088222099424541
+  lastModified: 637093613884184959
   LoadResult: 0
   FileSizes:
   - Name: 
     Value: 1716256
   Exists: 1
 --- !u!114 &-7886944467428954450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/ThreatLevel
+  m_EditorClassIdentifier: 
+  Name: ThreatLevel
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 0
+--- !u!114 &-7571464808018060053
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,6 +219,23 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 1
+--- !u!114 &-6051358241522113431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/GrappleActive
+  m_EditorClassIdentifier: 
+  Name: GrappleActive
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
 --- !u!114 &-5949875123812435369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,11 +290,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: D:/school/S4/GD/NAAM/ControlsTest/New Unity Project/Assets/Audio/FmodProject/Assignment2/Builds/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637088222099484649
+  lastModified: 637093613884274966
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 1034
+    Value: 1078
   Exists: 1
 --- !u!114 &-4224334954420764532
 MonoBehaviour:
@@ -373,11 +407,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: D:/school/S4/GD/NAAM/ControlsTest/New Unity Project/Assets/Audio/FmodProject/Assignment2/Builds/Desktop/Master.bank
   SubDir: 
-  lastModified: 637088222098614656
+  lastModified: 637093613875124935
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 11870
+    Value: 12752
   Exists: 1
 --- !u!114 &-2995546862295062341
 MonoBehaviour:
@@ -441,6 +475,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &-2530499868521978904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/GrappleActive
+  m_EditorClassIdentifier: 
+  Name: GrappleActive
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-2199423844115168333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,6 +509,40 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &-1616020013057049773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/NearMiss
+  m_EditorClassIdentifier: 
+  Name: NearMiss
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
+--- !u!114 &-1508226934406577436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/ThreatLevel
+  m_EditorClassIdentifier: 
+  Name: ThreatLevel
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,7 +569,7 @@ MonoBehaviour:
   - {fileID: -3044583875793638420}
   StringsBanks:
   - {fileID: -4623316402745444161}
-  stringsBankWriteTime: 637088222099484649
+  stringsBankWriteTime: 637093613884274966
   cacheVersion: 3
 --- !u!114 &148894458200575846
 MonoBehaviour:
@@ -547,7 +632,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 1375
+  Length: 250
 --- !u!114 &522454398439845770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,6 +728,23 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 884
+  Exists: 1
+--- !u!114 &2024916078655064949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/GrappleActive
+  m_EditorClassIdentifier: 
+  Name: GrappleActive
+  Min: 0
+  Max: 2
+  Default: 0
   Exists: 1
 --- !u!114 &2080304144461745760
 MonoBehaviour:
@@ -741,6 +843,23 @@ MonoBehaviour:
   - Name: Desktop
     Value: 838
   Exists: 0
+--- !u!114 &3863391487195095164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/NearMiss
+  m_EditorClassIdentifier: 
+  Name: NearMiss
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &3913988720912853325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -869,6 +988,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 112153
+--- !u!114 &6912138724933178474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/ThreatLevel
+  m_EditorClassIdentifier: 
+  Name: ThreatLevel
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &7052918527237795470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -889,11 +1025,12 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 7388032478366313515}
-  - {fileID: -3320659142616472376}
+  - {fileID: -2530499868521978904}
+  - {fileID: 3863391487195095164}
+  - {fileID: 6912138724933178474}
   MinDistance: 1
   MaxDistance: 20
-  Length: 112153
+  Length: 104000
 --- !u!114 &7081663411906347015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -928,6 +1065,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 1
+--- !u!114 &7528809712533416019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/New Event/NearMiss
+  m_EditorClassIdentifier: 
+  Name: NearMiss
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 0
 --- !u!114 &7845175168071511029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -950,7 +1104,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 312
+  Length: 3430
 --- !u!114 &8466732704955324268
 MonoBehaviour:
   m_ObjectHideFlags: 0

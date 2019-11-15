@@ -134,7 +134,7 @@
 			<destination>{d44ad462-cd65-4139-98a1-453a14ee8219}</destination>
 			<destination>{191c9294-8e11-4f09-89c3-1dc267fcdfbe}</destination>
 			<destination>{4a49f048-b01a-468e-a349-150996ec4053}</destination>
-			<destination>{47a2182e-804b-4cc7-8184-8a94b40d8f8c}</destination>
+			<destination>{3fcc5ca8-6bbf-4e49-b32b-af2e8b22fbf3}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{620552ab-d7c6-4332-bf36-d0966bda24ab}</destination>
@@ -193,7 +193,7 @@
 	</object>
 	<object class="ParameterProxy" id="{95bd9a25-ccae-41f1-b664-b4d6e7866898}">
 		<relationship name="modules">
-			<destination>{47a2182e-804b-4cc7-8184-8a94b40d8f8c}</destination>
+			<destination>{3fcc5ca8-6bbf-4e49-b32b-af2e8b22fbf3}</destination>
 		</relationship>
 		<relationship name="preset">
 			<destination>{6294dee0-33a3-4e42-96c3-7c5d9ac1eb9d}</destination>
@@ -450,6 +450,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{337150be-4567-45cc-88f5-13a76898f1c7}">
+		<property name="volume">
+			<value>10</value>
+		</property>
 		<property name="name">
 			<value>Synths</value>
 		</property>
@@ -520,30 +523,28 @@
 			<destination>{5db32f42-25a1-4fa9-8720-73ea0eb7e863}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{47a2182e-804b-4cc7-8184-8a94b40d8f8c}">
+	<object class="MultiSound" id="{3fcc5ca8-6bbf-4e49-b32b-af2e8b22fbf3}">
 		<property name="start">
 			<value>1</value>
+		</property>
+		<property name="quantizationInterval">
+			<value>5</value>
 		</property>
 		<property name="voiceStealing">
 			<value>3</value>
 		</property>
-		<property name="maxVoices">
-			<value>1</value>
-		</property>
-		<property name="pitch">
-			<value>0.699999988</value>
-		</property>
 		<property name="looping">
 			<value>true</value>
 		</property>
-		<relationship name="audioFile">
-			<destination>{40b4fa9b-d6c4-4374-9ebe-cc211f4b8b0c}</destination>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{2b09c332-9acb-4aa5-bf8e-350d80678660}</destination>
+			<destination>{2d429987-9acc-4883-9ac0-b71956c5e506}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{620552ab-d7c6-4332-bf36-d0966bda24ab}">
-		<property name="volume">
-			<value>-4.5</value>
-		</property>
 		<property name="name">
 			<value>Audio 2</value>
 		</property>
@@ -944,9 +945,20 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{a62ff476-064b-437c-b5ef-848438deb391}" />
+	<object class="SingleSound" id="{2b09c332-9acb-4aa5-bf8e-350d80678660}">
+		<relationship name="audioFile">
+			<destination>{af6f91ab-5f48-4ea1-8f69-d1f0958a5b9a}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{2d429987-9acc-4883-9ac0-b71956c5e506}">
+		<relationship name="audioFile">
+			<destination>{97b40c8a-1697-46fc-b999-7894d260d56b}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusEffectChain" id="{c72bc7c4-ef1d-4fdb-a288-db71b09b62b2}">
 		<relationship name="effects">
 			<destination>{49b09670-1ab5-4d9c-b33a-d87096ff3690}</destination>
+			<destination>{03cda935-6563-47d2-a58e-70e6a2147fc2}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{6ff762c1-bc65-4d15-b9e3-806e70e70774}" />
@@ -1178,6 +1190,23 @@
 	</object>
 	<object class="MixerBusFader" id="{6f4a8576-7c7d-49e2-86e5-7ffc6c960dcf}" />
 	<object class="MixerBusFader" id="{49b09670-1ab5-4d9c-b33a-d87096ff3690}" />
+	<object class="SFXReverbEffect" id="{03cda935-6563-47d2-a58e-70e6a2147fc2}">
+		<property name="decayTime">
+			<value>3100</value>
+		</property>
+		<property name="lowShelfGain">
+			<value>8</value>
+		</property>
+		<property name="highCut">
+			<value>400</value>
+		</property>
+		<property name="wetLevel">
+			<value>-5.5</value>
+		</property>
+		<property name="dryLevel">
+			<value>-3.5</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{becdd2d1-c7b0-4f97-881b-7c4f07985efd}">
 		<property name="position">
 			<value>1.6997167138810199</value>
