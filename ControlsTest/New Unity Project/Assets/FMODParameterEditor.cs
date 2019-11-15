@@ -12,6 +12,8 @@ public class FMODParameterEditor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GD.Intensity = 0;
+        GD.SetGrappleState(false);
         FmodEv = GetComponent<StudioEventEmitter>().EventInstance;
         //FmodEv.getParameterByName("ThreatLevel", out threat);
         GD.IntensityChanged.AddListener(OnIntensityChange);

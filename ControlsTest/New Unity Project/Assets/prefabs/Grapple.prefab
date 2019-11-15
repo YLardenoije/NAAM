@@ -59,6 +59,7 @@ MonoBehaviour:
   maxAttachedTime: 1
   MinimalHoldDistance: 2
   lr: {fileID: 8599046219078214423}
+  gd: {fileID: 11400000, guid: 5bceae546bb1a174a9fa7e6532d09c3a, type: 2}
 --- !u!114 &1880851650191131502
 MonoBehaviour:
   m_ObjectHideFlags: 0

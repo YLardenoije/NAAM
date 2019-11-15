@@ -42,7 +42,6 @@
 			<destination>{56dab263-bb20-478f-8870-16f2a03351e3}</destination>
 		</relationship>
 		<relationship name="parameters">
-			<destination>{1cfd921f-350b-43dd-8933-0397576a9691}</destination>
 			<destination>{a3b1789f-9065-4fed-90b9-069df0912b4c}</destination>
 			<destination>{95bd9a25-ccae-41f1-b664-b4d6e7866898}</destination>
 		</relationship>
@@ -133,7 +132,6 @@
 		<relationship name="modules">
 			<destination>{d44ad462-cd65-4139-98a1-453a14ee8219}</destination>
 			<destination>{191c9294-8e11-4f09-89c3-1dc267fcdfbe}</destination>
-			<destination>{4a49f048-b01a-468e-a349-150996ec4053}</destination>
 			<destination>{3fcc5ca8-6bbf-4e49-b32b-af2e8b22fbf3}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
@@ -176,14 +174,6 @@
 			<destination>{198e5f05-e42d-4096-b6b7-844fe4150ffe}</destination>
 			<destination>{8cf6a7bf-9690-43a7-b8c1-c767cca110b9}</destination>
 			<destination>{c6e5685a-92f7-454e-bbf6-b8c61d8d5b95}</destination>
-		</relationship>
-	</object>
-	<object class="ParameterProxy" id="{1cfd921f-350b-43dd-8933-0397576a9691}">
-		<relationship name="modules">
-			<destination>{4a49f048-b01a-468e-a349-150996ec4053}</destination>
-		</relationship>
-		<relationship name="preset">
-			<destination>{45c3aba5-ae5c-497d-8480-bed73fd3ef11}</destination>
 		</relationship>
 	</object>
 	<object class="ParameterProxy" id="{a3b1789f-9065-4fed-90b9-069df0912b4c}">
@@ -508,20 +498,6 @@
 		<property name="length">
 			<value>0</value>
 		</property>
-	</object>
-	<object class="SingleSound" id="{4a49f048-b01a-468e-a349-150996ec4053}">
-		<property name="start">
-			<value>1</value>
-		</property>
-		<property name="quantizationInterval">
-			<value>6</value>
-		</property>
-		<property name="startOffset">
-			<value>34</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{5db32f42-25a1-4fa9-8720-73ea0eb7e863}</destination>
-		</relationship>
 	</object>
 	<object class="MultiSound" id="{3fcc5ca8-6bbf-4e49-b32b-af2e8b22fbf3}">
 		<property name="start">
