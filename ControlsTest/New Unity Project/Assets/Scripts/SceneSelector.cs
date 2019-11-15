@@ -13,6 +13,7 @@ public class SceneSelector: MonoBehaviour
     public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
     }
 
     public void LoadMainMenu()
