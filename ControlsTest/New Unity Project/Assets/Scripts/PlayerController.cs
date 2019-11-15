@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
         }
         else if( GlobalData.SelectedCombatItem == GlobalData.CombatItems.FireBall )
         {
-            AttackCooldown = 0.4f;
+            AttackCooldown = 0.2f;
         }
 
     }
