@@ -47,7 +47,10 @@ public class Grapple : MonoBehaviour
     {
         if( Attached )
         {
+            if (lr!=null && Source!=null)
+            {
             lr.SetPosition(1, Source.transform.position);
+            }
             attachedTime += Time.deltaTime;
             if( HitObjectIsEnemy && HitObject != null )
             {
