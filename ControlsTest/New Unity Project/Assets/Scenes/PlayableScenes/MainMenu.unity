@@ -1709,6 +1709,7 @@ MonoBehaviour:
   SceneNames:
   - Tutorial
   - Level 1
+  - Level 2
 --- !u!4 &893815511
 Transform:
   m_ObjectHideFlags: 0
